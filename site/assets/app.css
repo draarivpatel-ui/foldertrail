@@ -1,0 +1,1483 @@
+/* Foldertrail: the converter page (site/app/). Builds on base.css. */
+
+/* ------------------------------------------------------------------------------------------------
+   Layout: a step rail on the left, the task on the right (like an installer), one column on a phone. */
+
+.shell {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 56px;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 44px 24px 72px;
+}
+
+.main {
+  min-width: 0;
+  max-width: 780px;
+}
+
+.main:focus {
+  outline: none;
+}
+
+/* ------------------------------------------------------------------------------------------------
+   Step rail. The line between steps is a trail: dashed ahead, solid where you have been. */
+
+.steps {
+  position: sticky;
+  top: 32px;
+  align-self: start;
+}
+
+.steps-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  padding: 9px 0;
+  color: var(--ink-3);
+  font-size: 0.9375rem;
+  line-height: 1.3;
+}
+
+.step + .step::before {
+  content: "";
+  position: absolute;
+  left: 9.25px;
+  top: -9px;
+  height: 18px;
+  width: 1.5px;
+  background: repeating-linear-gradient(to bottom, var(--line-strong) 0 3px, transparent 3px 6px);
+}
+
+.step.is-done + .step::before {
+  background: var(--accent);
+}
+
+.step-dot {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  inline-size: 20px;
+  block-size: 20px;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 50%;
+  background: var(--panel);
+  transition: background-color 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.step.is-current {
+  color: var(--ink);
+  font-weight: 620;
+}
+
+.step.is-current .step-dot {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-wash);
+}
+
+.step.is-current .step-dot::after {
+  content: "";
+  inline-size: 6px;
+  block-size: 6px;
+  border-radius: 50%;
+  background: var(--accent-ink);
+}
+
+.step.is-done {
+  color: var(--ink-2);
+}
+
+.step.is-done .step-dot {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.step.is-done .step-dot::after {
+  content: "";
+  inline-size: 12px;
+  block-size: 12px;
+  background: var(--accent-ink);
+  -webkit-mask: url(icons/check.svg) no-repeat center / contain;
+  mask: url(icons/check.svg) no-repeat center / contain;
+}
+
+.step.is-failed .step-dot {
+  border-color: var(--bad);
+  background: var(--bad-wash);
+}
+
+.steps-note {
+  display: flex;
+  gap: 8px;
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-3);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+}
+
+.steps-note .icon {
+  margin-top: 0.15em;
+}
+
+/* ------------------------------------------------------------------------------------------------
+   Views */
+
+.view {
+  animation: view-in 260ms var(--ease-out) both;
+}
+
+@keyframes view-in {
+  from {
+    opacity: 0.35;
+    transform: translateY(6px);
+  }
+}
+
+.view > h1 {
+  margin-bottom: 10px;
+}
+
+.lead {
+  max-width: 62ch;
+  margin-bottom: 26px;
+  color: var(--ink-2);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+}
+
+.meta {
+  margin: -16px 0 22px;
+  color: var(--ink-3);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.meta:empty {
+  display: none;
+}
+
+.fine {
+  color: var(--ink-3);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.status-line {
+  margin: 0 0 14px;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+.status-line:empty {
+  display: none;
+}
+
+.view .notice {
+  margin-bottom: 16px;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.section {
+  margin-top: 40px;
+}
+
+.section > h2 {
+  margin-bottom: 12px;
+}
+
+.section > p {
+  max-width: 66ch;
+  color: var(--ink-2);
+}
+
+/* Shown only when the scripts did not start (after a pause, so it never flashes on a normal load). */
+.boot-note {
+  display: grid;
+  gap: 10px;
+  max-width: 60ch;
+  color: var(--ink-2);
+  animation: boot-reveal 0s linear 1.5s both;
+}
+
+.boot-note h1 {
+  margin-bottom: 4px;
+}
+
+@keyframes boot-reveal {
+  from {
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
+  }
+}
+
+.phone-note {
+  display: none;
+}
+
+@media (max-width: 600px), (hover: none) and (pointer: coarse) {
+  .view .phone-note {
+    display: grid;
+  }
+}
+
+/* ------------------------------------------------------------------------------------------------
+   1. Choose library */
+
+.dropzone {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding: 42px 28px 36px;
+  border-radius: var(--r-xl);
+  background: var(--panel);
+  text-align: center;
+  transition: background-color 180ms ease;
+}
+
+.dropzone-edge {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.dropzone-edge-rect {
+  fill: none;
+  stroke: var(--line-strong);
+  stroke-width: 1.5;
+  stroke-dasharray: 7 5;
+  transition: stroke 180ms ease;
+}
+
+.dropzone-art {
+  margin-bottom: 8px;
+  font-size: 48px;
+  color: var(--accent);
+}
+
+.dropzone-title {
+  font-size: 1.1875rem;
+  font-weight: 640;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.dropzone-sub {
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+.dropzone-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+body.is-dragging .dropzone {
+  background: var(--accent-wash);
+}
+
+body.is-dragging .dropzone-edge-rect {
+  stroke: var(--accent);
+  stroke-width: 2;
+  animation: trail-march 700ms linear infinite;
+}
+
+@keyframes trail-march {
+  to {
+    stroke-dashoffset: -12;
+  }
+}
+
+.dropzone.is-disabled {
+  opacity: 0.55;
+}
+
+.assurances {
+  display: grid;
+  gap: 8px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+.assurances li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+}
+
+.assurances .icon {
+  margin-top: 0.22em;
+  color: var(--ink-3);
+}
+
+.assurances strong {
+  color: var(--ink);
+  font-weight: 620;
+}
+
+.where {
+  margin-top: 40px;
+}
+
+.where > h2 {
+  margin-bottom: 14px;
+}
+
+.where-routes {
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--panel);
+}
+
+.where-route {
+  padding: 18px 20px 18px;
+}
+
+.where-route + .where-route {
+  border-top: 1px solid var(--line);
+}
+
+.where-route h3 {
+  margin-bottom: 12px;
+}
+
+.where-route .fine {
+  margin-top: 10px;
+  padding-left: 32px;
+}
+
+.where > .fine {
+  margin-top: 12px;
+}
+
+.steps-numbered {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: n;
+  color: var(--ink);
+  font-size: 0.9375rem;
+}
+
+.steps-numbered > li {
+  position: relative;
+  padding-left: 32px;
+  counter-increment: n;
+}
+
+.steps-numbered > li + li {
+  margin-top: 10px;
+}
+
+.steps-numbered > li::before {
+  content: counter(n);
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  inline-size: 21px;
+  block-size: 21px;
+  border-radius: 50%;
+  background: var(--panel-sunk);
+  color: var(--ink-2);
+  font-size: 0.75rem;
+  font-weight: 650;
+  line-height: 21px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.path-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 5px 5px 5px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--panel-2);
+}
+
+.path-box code {
+  flex: 1;
+  min-width: 0;
+  color: var(--ink);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  overflow-wrap: break-word; /* Safari before 15.4 has no "anywhere" */
+  overflow-wrap: anywhere;
+}
+
+.path-box .btn {
+  flex: none;
+}
+
+/* ------------------------------------------------------------------------------------------------
+   2. Read: progress */
+
+.progress {
+  position: relative;
+  max-width: 540px;
+  height: 8px;
+  margin-top: 4px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--panel-sunk);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.progress-fill {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 220ms ease-out;
+}
+
+.progress.is-indeterminate .progress-fill {
+  width: 34%;
+  transform: none;
+  transition: none;
+  animation: progress-wander 1.4s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+@keyframes progress-wander {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(300%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress.is-indeterminate .progress-fill {
+    width: 100%;
+    opacity: 0.35;
+    animation: none;
+  }
+}
+
+.progress-detail {
+  min-height: 1.5em;
+  margin: 10px 0 18px;
+  color: var(--ink-3);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+#view-read .fine {
+  margin-bottom: 22px;
+}
+
+/* ------------------------------------------------------------------------------------------------
+   3. Preview: the folder tree. Rows are drawn flat; the dashed "trail" guides show the nesting. */
+
+.tree-panel {
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--panel);
+  overflow: hidden;
+}
+
+.tree-head,
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) repeat(3, 88px);
+  align-items: center;
+  column-gap: 4px;
+  padding: 0 16px 0 10px;
+}
+
+.tree-head {
+  min-height: 40px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-2);
+  color: var(--ink-3);
+  font-size: 0.8125rem;
+  font-weight: 560;
+}
+
+.tree-head-name {
+  padding-left: 4px;
+}
+
+.tree-head .num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.tree {
+  max-height: 600px;
+  padding: 6px 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.row {
+  min-height: 36px;
+  cursor: default;
+  -webkit-user-select: none; /* Safari has only the prefixed property */
+  user-select: none;
+}
+
+.row[aria-expanded] {
+  cursor: pointer;
+}
+
+.row:hover {
+  background: var(--panel-2);
+}
+
+.row:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: -2px;
+  border-radius: var(--r-sm);
+}
+
+.row-name {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  min-width: 0;
+}
+
+.guides {
+  display: flex;
+  align-self: stretch;
+  flex: none;
+}
+
+.g {
+  position: relative;
+  flex: none;
+  inline-size: 20px;
+}
+
+.g-pipe::before,
+.g-tee::before,
+.g-elbow::before {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 0;
+  bottom: 0;
+  width: 1.5px;
+  background: repeating-linear-gradient(to bottom, var(--trail-line) 0 4px, transparent 4px 6px);
+}
+
+.g-elbow::before {
+  bottom: 50%;
+}
+
+.g-tee::after,
+.g-elbow::after {
+  content: "";
+  position: absolute;
+  left: 9px;
+  right: 1px;
+  top: calc(50% - 0.75px);
+  height: 1.5px;
+  background: repeating-linear-gradient(to right, var(--trail-line) 0 4px, transparent 4px 6px);
+}
+
+/* A row with nothing inside it carries its trail on to its icon. */
+.twisty-leaf {
+  position: relative;
+}
+
+.twisty-leaf::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 4px;
+  top: calc(50% - 0.75px);
+  height: 1.5px;
+  background: repeating-linear-gradient(to right, var(--trail-line) 0 4px, transparent 4px 6px);
+}
+
+.twisty {
+  display: grid;
+  place-items: center;
+  flex: none;
+  inline-size: 20px;
+  block-size: 20px;
+  color: var(--ink-3);
+}
+
+.twisty .icon {
+  font-size: 12px;
+  transition: transform 160ms var(--ease-out);
+}
+
+.row[aria-expanded="true"] .twisty .icon {
+  transform: rotate(90deg);
+}
+
+.row-icon {
+  margin: 0 9px 0 3px;
+  font-size: 16px;
+}
+
+.row-folder .row-icon {
+  color: var(--ink-2);
+}
+
+.row-list .row-icon {
+  color: var(--accent);
+}
+
+/* The row itself has no vertical padding, so the trail guides run unbroken from row to row. */
+.row-text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 1px 8px;
+  min-width: 0;
+  padding: 6px 0;
+}
+
+/* Names wrap rather than end in "…": in the preview the whole point is to recognize your own lists. */
+.row-title {
+  min-width: 0;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  overflow-wrap: break-word; /* Safari before 15.4 has no "anywhere" */
+  overflow-wrap: anywhere;
+}
+
+.row-folder .row-title {
+  font-weight: 600;
+}
+
+/* Library names are someone else's text: a right-to-left override (U+202E) inside one must not reorder what follows
+   it, such as "2 copies" next to a duplicated name. */
+.row-title,
+.also-name,
+.nc-names li {
+  unicode-bidi: isolate;
+}
+
+.row-title.is-untitled {
+  color: var(--ink-3);
+  font-style: italic;
+}
+
+.row-sub {
+  flex: none;
+  color: var(--ink-3);
+  font-size: 0.8125rem;
+  white-space: nowrap;
+}
+
+.row-list .row-sub {
+  display: none;
+}
+
+/* A folder row has no counts of its own, so its name may use the number columns too. */
+.row-folder .row-name {
+  grid-column: 1 / -1;
+}
+
+.row-folder .num {
+  display: none;
+}
+
+/* What a list names in BaseCamp that its own file will not hold (not converted, or in "_Duplicate names"):
+   under the name, one warning sign, one line per fact. */
+.row-flag {
+  display: flex;
+  flex-basis: 100%;
+  align-items: flex-start;
+  gap: 5px;
+  color: var(--warn);
+  font-size: 0.8125rem;
+  font-weight: 540;
+  line-height: 1.45;
+}
+
+.row-flag .icon {
+  margin-top: 0.2em;
+  font-size: 0.875rem;
+}
+
+.row-flag-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.num {
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.num.is-zero {
+  color: var(--ink-3);
+}
+
+.tree-empty {
+  padding: 18px 16px;
+  color: var(--ink-2);
+}
+
+.tree-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 12px;
+  min-height: 44px;
+  padding: 6px 8px 6px 16px;
+  border-top: 1px solid var(--line);
+  background: var(--panel-2);
+}
+
+.tree-foot-note {
+  color: var(--ink-3);
+  font-size: 0.8125rem;
+}
+
+.tree-foot-actions {
+  display: flex;
+  gap: 2px;
+  margin-left: auto;
+}
+
+/* Buckets that are saved outside the tree: "Not in any list", "_Duplicate names". */
+
+.also {
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--panel);
+}
+
+.also-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+  padding: 13px 16px;
+}
+
+.also-row + .also-row {
+  border-top: 1px solid var(--line);
+}
+
+.also-row > .icon {
+  margin-top: 0.2em;
+  color: var(--ink-2);
+}
+
+.also-title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.also-title .also-count {
+  margin-left: 4px;
+  color: var(--ink-3);
+  font-size: 0.875rem;
+  font-weight: 450;
+}
+
+.also-row p:not(.also-title) {
+  margin-top: 2px;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+/* What will not convert: one panel, a group per reason */
+
+.nc-panel {
+  margin-top: 16px;
+  border: 1px solid var(--warn-line);
+  border-radius: var(--r-lg);
+  background: var(--panel);
+}
+
+.facts {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.facts li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+  max-width: 70ch;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+.facts .icon {
+  margin-top: 0.22em;
+  color: var(--ink-3);
+}
+
+.nc-group + .nc-group {
+  border-top: 1px solid var(--line);
+}
+
+.nc-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+  padding: 13px 16px 10px;
+}
+
+.nc-head > .icon {
+  margin-top: 0.2em;
+  color: var(--warn);
+}
+
+.nc-head-title {
+  font-size: 1rem;
+  font-weight: 620;
+  line-height: 1.5;
+}
+
+.nc-head p:not(.nc-head-title) {
+  margin-top: 2px;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+.nc-names {
+  margin: 0;
+  padding: 0 16px 14px 42px;
+  list-style: none;
+  columns: 2 220px;
+  column-gap: 24px;
+  font-size: 0.9375rem;
+}
+
+.nc-names li {
+  break-inside: avoid;
+  padding: 2px 0;
+  overflow-wrap: break-word; /* Safari before 15.4 has no "anywhere" */
+  overflow-wrap: anywhere;
+}
+
+.nc-more {
+  padding: 0 16px 14px 42px;
+}
+
+.nc-more summary {
+  color: var(--accent);
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+
+.nc-more .nc-names {
+  padding: 8px 0 0;
+}
+
+/* Notes from reading */
+
+.notes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--panel);
+}
+
+.notes li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  padding: 10px 16px;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+.notes li + li {
+  border-top: 1px solid var(--line);
+}
+
+.notes .note-count {
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ------------------------------------------------------------------------------------------------
+   4. Download */
+
+.unlock {
+  margin-top: 44px;
+  padding: 24px 26px 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  background: var(--panel);
+  box-shadow: var(--shadow-2);
+}
+
+.unlock-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.unlock-head h2 {
+  font-size: 1.375rem;
+}
+
+.unlock-price {
+  font-size: 1.375rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+
+.unlock-what {
+  max-width: 64ch;
+  margin-top: 6px;
+  color: var(--ink-2);
+}
+
+.presale {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--panel-2);
+}
+
+.presale-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  font-weight: 650;
+}
+
+.presale p:not(.presale-title) {
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+.unlock-steps {
+  display: grid;
+  gap: 18px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.unlock-step {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 14px;
+}
+
+.unlock-step-num {
+  display: grid;
+  place-items: center;
+  inline-size: 24px;
+  block-size: 24px;
+  margin-top: 6px;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 50%;
+  color: var(--ink-2);
+  font-size: 0.8125rem;
+  font-weight: 650;
+}
+
+.unlock-step-body .fine {
+  margin-top: 6px;
+}
+
+.field-label {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 620;
+}
+
+.key-row {
+  display: flex;
+  gap: 8px;
+  max-width: 520px;
+  margin-top: 6px;
+}
+
+.field {
+  flex: 1;
+  min-width: 0;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--field-line);
+  border-radius: var(--r-md);
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 0.9375rem;
+}
+
+.field:focus-visible {
+  border-color: var(--accent);
+  outline-offset: 1px;
+}
+
+.field[aria-invalid="true"] {
+  border-color: var(--bad);
+}
+
+.field:disabled {
+  background: var(--panel-2);
+  color: var(--ink-3);
+}
+
+.licence-message {
+  min-height: 1.5em;
+  margin-top: 6px;
+  font-size: 0.875rem;
+}
+
+.licence-message.is-bad {
+  color: var(--bad);
+}
+
+.licence-message.is-good {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--accent);
+  font-weight: 560;
+}
+
+.licence-message.is-good::before {
+  content: "";
+  flex: none;
+  inline-size: 1.05em;
+  block-size: 1.05em;
+  background: currentColor;
+  -webkit-mask: url(icons/check.svg) no-repeat center / contain;
+  mask: url(icons/check.svg) no-repeat center / contain;
+}
+
+/* Unlocked: the buy step and the key field are gone, so the remaining step needs no number. */
+.unlock-steps.is-unlocked .unlock-step {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.unlock-steps.is-unlocked .unlock-step-num {
+  display: none;
+}
+
+.unlock-steps.is-unlocked .licence-message {
+  margin-top: 0;
+  font-size: 0.9375rem;
+}
+
+.licence-saved {
+  margin-top: 2px;
+  color: var(--ink-3);
+  font-size: 0.875rem;
+}
+
+.options {
+  min-width: 0;
+  margin: 24px 0 0;
+  padding: 18px 0 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+.options legend {
+  float: left;
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 0;
+}
+
+/* A checkbox, its label (the name) and a description (aria-describedby), in two columns. */
+.check {
+  clear: both;
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  column-gap: 10px;
+  align-items: start;
+  padding: 6px 0;
+}
+
+.check input {
+  grid-row: 1 / span 2;
+  inline-size: 17px;
+  block-size: 17px;
+  margin: 3px 0 0;
+  cursor: pointer;
+}
+
+.check-title {
+  grid-column: 2;
+  font-weight: 540;
+  cursor: pointer;
+}
+
+.check-sub {
+  grid-column: 2;
+  color: var(--ink-3);
+  font-size: 0.875rem;
+}
+
+.options:disabled .check,
+.options:disabled .check-title,
+.options:disabled .check input {
+  color: var(--ink-3);
+  cursor: not-allowed;
+}
+
+.download-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 18px;
+  margin-top: 22px;
+}
+
+.export-progress {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  min-width: 240px;
+}
+
+.export-phase {
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+.progress-small {
+  flex: 1;
+  min-width: 120px;
+  max-width: 220px;
+  height: 6px;
+  margin: 0;
+}
+
+#export-error {
+  margin: 16px 0 0;
+}
+
+.download-hint {
+  margin-top: 8px;
+}
+
+.error-help {
+  max-width: 62ch;
+  margin: -12px 0 24px;
+  color: var(--ink-2);
+}
+
+/* ------------------------------------------------------------------------------------------------
+   5. Done */
+
+#done-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.done-check {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  inline-size: 32px;
+  block-size: 32px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 18px;
+}
+
+.next-steps {
+  max-width: 66ch;
+}
+
+.report,
+.dump {
+  max-height: 440px;
+  margin: 12px 0 0;
+  padding: 14px 16px;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  overflow-wrap: break-word; /* Safari before 15.4 has no "anywhere" */
+  overflow-wrap: anywhere;
+}
+
+.diagnostic {
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.diagnostic > p {
+  font-size: 0.9375rem;
+}
+
+.diagnostic .fine {
+  margin-top: 8px;
+}
+
+.diagnostic .button-row {
+  margin-top: 16px;
+}
+
+.status-inline {
+  color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: 560;
+}
+
+.status-inline.is-bad {
+  color: var(--bad);
+}
+
+/* ------------------------------------------------------------------------------------------------
+   Narrow windows and phones */
+
+@media (max-width: 820px) {
+  .shell {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding: 24px 16px 56px;
+  }
+
+  .steps {
+    position: static;
+  }
+
+  .steps-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .step {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 6px;
+    padding: 0;
+    font-size: 0.8125rem;
+    text-align: center;
+  }
+
+  .step + .step::before {
+    left: calc(-50% + 16px);
+    right: calc(50% + 16px);
+    top: 9.25px;
+    width: auto;
+    height: 1.5px;
+    background: repeating-linear-gradient(to right, var(--line-strong) 0 3px, transparent 3px 6px);
+  }
+
+  .step.is-done + .step::before {
+    background: var(--accent);
+  }
+
+  .steps-note {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+    margin-bottom: 22px;
+  }
+
+  .dropzone {
+    padding: 30px 18px 24px;
+  }
+
+  .dropzone-art {
+    font-size: 40px;
+  }
+
+  .dropzone-title {
+    font-size: 1.0625rem;
+  }
+
+  .dropzone-actions {
+    display: grid;
+    width: 100%;
+  }
+
+  .where-route {
+    padding: 16px;
+  }
+
+  .where-route .fine {
+    padding-left: 0;
+  }
+
+  .tree-head,
+  .row {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0 12px 0 6px;
+  }
+
+  .tree-head .num,
+  .row .num {
+    display: none;
+  }
+
+  .row {
+    min-height: 54px;
+  }
+
+  .row-text {
+    padding: 7px 0;
+  }
+
+  .tree {
+    max-height: none;
+  }
+
+  .g {
+    inline-size: 16px;
+  }
+
+  .g-pipe::before,
+  .g-tee::before,
+  .g-elbow::before,
+  .g-tee::after,
+  .g-elbow::after {
+    left: 7px;
+  }
+
+  .row-text {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .row-list .row-sub {
+    display: block;
+  }
+
+  .row-flag {
+    flex-basis: auto;
+  }
+
+  .row-title {
+    max-width: 100%;
+  }
+
+  .unlock {
+    padding: 20px 16px 20px;
+  }
+
+  .unlock-head h2,
+  .unlock-price {
+    font-size: 1.25rem;
+  }
+
+  .unlock-step {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .unlock-step-num {
+    display: none;
+  }
+
+  .download-row .btn-large {
+    width: 100%;
+  }
+
+  .nc-names,
+  .nc-more {
+    padding-left: 16px;
+  }
+}
+
+/* Names in the "Duplicate names" bucket */
+.also-names {
+  display: grid;
+  gap: 2px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9375rem;
+}
+
+.also-names li {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+  overflow-wrap: break-word; /* Safari before 15.4 has no "anywhere" */
+  overflow-wrap: anywhere;
+}
+
+.also-names .icon {
+  flex: none;
+  align-self: center;
+  color: var(--ink-3);
+}
+
+.also-copies,
+.also-more {
+  color: var(--ink-3);
+  font-size: 0.875rem;
+}
+
+.nc-names .is-untitled {
+  color: var(--ink-3);
+  font-style: italic;
+}
+
+.boot-note.is-now {
+  animation: none;
+}

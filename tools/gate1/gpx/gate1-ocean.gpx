@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="BCR Gate 1 kit (made-up test data)" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd">
+  <metadata>
+    <name>Gate1 Ocean</name>
+    <desc>Made-up test data for the BCR Gate 1 check. Not a real place or trip.</desc>
+  </metadata>
+  <wpt lat="-48.8761234" lon="-123.3934567">
+    <ele>12.5</ele>
+    <time>2001-02-03T04:05:06Z</time>
+    <name>Gate1 Waypoint Alpha</name>
+    <cmt>Gate1 comment Alpha</cmt>
+    <sym>Flag, Blue</sym>
+  </wpt>
+  <wpt lat="-48.8812345" lon="-123.4012345">
+    <name>Gate1 Waypoint Bravo</name>
+    <extensions>
+      <gpxx:WaypointExtension>
+        <gpxx:Address>
+          <gpxx:StreetAddress>1 Gate1 Imported Street</gpxx:StreetAddress>
+          <gpxx:City>Gate1 Imported City</gpxx:City>
+          <gpxx:State>Gate1 Imported State</gpxx:State>
+          <gpxx:Country>Gate1 Imported Country</gpxx:Country>
+          <gpxx:PostalCode>G1-0001</gpxx:PostalCode>
+        </gpxx:Address>
+        <gpxx:PhoneNumber>555-0101</gpxx:PhoneNumber>
+      </gpxx:WaypointExtension>
+    </extensions>
+  </wpt>
+  <wpt lat="-48.8698765" lon="-123.3876543">
+    <name>Gate1 Waypoint Charlie</name>
+  </wpt>
+</gpx>

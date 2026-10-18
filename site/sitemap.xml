@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Before launch, replace https://foldertrail.example with the site's real address here and in robots.txt
+    . test/site.test.js checks that every page is listed and that both files agree. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://foldertrail.example/</loc></url>
+  <url><loc>https://foldertrail.example/app/</loc></url>
+  <url><loc>https://foldertrail.example/guide/</loc></url>
+  <url><loc>https://foldertrail.example/faq/</loc></url>
+  <url><loc>https://foldertrail.example/privacy/</loc></url>
+</urlset>

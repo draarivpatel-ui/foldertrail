@@ -1,0 +1,671 @@
+{
+  "kit": "BCR Gate 1",
+  "kitVersion": 1,
+  "note": "Everything here is made up. The founder imports gpx/*.gpx into BaseCamp 4.8.13, builds the tree below, types the typedByHand values into Contact Info, and drags the two items marked with two lists. The check page compares a real BaseCamp library against this file and prints only counts and yes/no.",
+  "files": [
+    {
+      "file": "gate1-ocean.gpx",
+      "importInto": "Gate1 Ocean",
+      "writtenBy": "tools/gate1/make-gpx.js"
+    },
+    {
+      "file": "gate1-desert.gpx",
+      "importInto": "Gate1 Desert",
+      "writtenBy": "src/export/gpx.js"
+    },
+    {
+      "file": "gate1-deep.gpx",
+      "importInto": "Gate1 Deep",
+      "writtenBy": "tools/gate1/make-gpx.js"
+    }
+  ],
+  "tree": {
+    "root": "My Collection",
+    "folders": [
+      {
+        "label": "Folder Trips",
+        "name": "Gate1 Trips",
+        "parent": null
+      },
+      {
+        "label": "Folder Inner",
+        "name": "Gate1 Inner",
+        "parent": "Gate1 Trips"
+      }
+    ],
+    "lists": [
+      {
+        "label": "List Ocean",
+        "name": "Gate1 Ocean",
+        "folder": "Gate1 Trips",
+        "file": "gate1-ocean.gpx"
+      },
+      {
+        "label": "List Desert",
+        "name": "Gate1 Desert",
+        "folder": "Gate1 Trips",
+        "file": "gate1-desert.gpx"
+      },
+      {
+        "label": "List Deep",
+        "name": "Gate1 Deep",
+        "folder": "Gate1 Inner",
+        "file": "gate1-deep.gpx"
+      }
+    ]
+  },
+  "waypoints": [
+    {
+      "label": "Waypoint Alpha",
+      "name": "Gate1 Waypoint Alpha",
+      "file": "gate1-ocean.gpx",
+      "lists": [
+        "Gate1 Ocean",
+        "Gate1 Desert"
+      ],
+      "lat": -48.8761234,
+      "lon": -123.3934567,
+      "ele": 12.5,
+      "time": "2001-02-03T04:05:06Z",
+      "comment": "Gate1 comment Alpha",
+      "symbol": "Flag, Blue",
+      "address": null,
+      "phone": null,
+      "typedByHand": null
+    },
+    {
+      "label": "Waypoint Bravo",
+      "name": "Gate1 Waypoint Bravo",
+      "file": "gate1-ocean.gpx",
+      "lists": [
+        "Gate1 Ocean"
+      ],
+      "lat": -48.8812345,
+      "lon": -123.4012345,
+      "ele": null,
+      "time": null,
+      "comment": "",
+      "symbol": "",
+      "address": {
+        "street": "1 Gate1 Imported Street",
+        "city": "Gate1 Imported City",
+        "state": "Gate1 Imported State",
+        "country": "Gate1 Imported Country",
+        "postalCode": "G1-0001"
+      },
+      "phone": "555-0101",
+      "typedByHand": null
+    },
+    {
+      "label": "Waypoint Charlie",
+      "name": "Gate1 Waypoint Charlie",
+      "file": "gate1-ocean.gpx",
+      "lists": [
+        "Gate1 Ocean"
+      ],
+      "lat": -48.8698765,
+      "lon": -123.3876543,
+      "ele": null,
+      "time": null,
+      "comment": "",
+      "symbol": "",
+      "address": null,
+      "phone": null,
+      "typedByHand": null
+    },
+    {
+      "label": "Waypoint Delta",
+      "name": "Gate1 Waypoint Delta",
+      "file": "gate1-desert.gpx",
+      "lists": [
+        "Gate1 Desert"
+      ],
+      "lat": 20.1234567,
+      "lon": 50.4567891,
+      "ele": 100.25,
+      "time": null,
+      "comment": "Gate1 comment Delta",
+      "symbol": "",
+      "address": null,
+      "phone": null,
+      "typedByHand": {
+        "street": "12 Gate1 Typed Lane",
+        "city": "Gate1 Typed Town",
+        "state": "Gate1 Typed State",
+        "country": "Gate1 Typed Land",
+        "postalCode": "G1-0002",
+        "phone": "555-0102"
+      }
+    },
+    {
+      "label": "Waypoint Echo",
+      "name": "Gate1 Waypoint Echo",
+      "file": "gate1-desert.gpx",
+      "lists": [
+        "Gate1 Desert"
+      ],
+      "lat": 20.1345678,
+      "lon": 50.4678912,
+      "ele": null,
+      "time": "2001-02-03T05:06:07Z",
+      "comment": "",
+      "symbol": "",
+      "address": null,
+      "phone": null,
+      "typedByHand": null
+    },
+    {
+      "label": "Waypoint Foxtrot",
+      "name": "Gate1 Waypoint Foxtrot",
+      "file": "gate1-deep.gpx",
+      "lists": [
+        "Gate1 Deep"
+      ],
+      "lat": -35.2512345,
+      "lon": 85.7512345,
+      "ele": 3.75,
+      "time": "2006-07-08T09:10:11Z",
+      "comment": "Gate1 comment Foxtrot",
+      "symbol": "",
+      "address": null,
+      "phone": null,
+      "typedByHand": null
+    }
+  ],
+  "routes": [
+    {
+      "label": "Route Four",
+      "name": "Gate1 Route Four",
+      "file": "gate1-desert.gpx",
+      "lists": [
+        "Gate1 Desert"
+      ],
+      "via": [
+        {
+          "label": "Via One",
+          "name": "Gate1 Via One",
+          "lat": 20.1012345,
+          "lon": 50.4012345
+        },
+        {
+          "label": "Via Two",
+          "name": "Gate1 Via Two",
+          "lat": 20.1112345,
+          "lon": 50.4212345
+        },
+        {
+          "label": "Via Three",
+          "name": "Gate1 Via Three",
+          "lat": 20.1212345,
+          "lon": 50.4412345
+        },
+        {
+          "label": "Via Four",
+          "name": "Gate1 Via Four",
+          "lat": 20.1312345,
+          "lon": 50.4612345
+        }
+      ]
+    }
+  ],
+  "tracks": [
+    {
+      "label": "Track Timed",
+      "name": "Gate1 Track Timed",
+      "file": "gate1-desert.gpx",
+      "lists": [
+        "Gate1 Desert",
+        "Gate1 Ocean"
+      ],
+      "segments": [
+        [
+          {
+            "lat": 20.2001234,
+            "lon": 50.5001234,
+            "ele": 200,
+            "time": "2002-03-04T05:06:07Z"
+          },
+          {
+            "lat": 20.2002734,
+            "lon": 50.5003734,
+            "ele": 200.5,
+            "time": "2002-03-04T05:06:17Z"
+          },
+          {
+            "lat": 20.2004234,
+            "lon": 50.5006234,
+            "ele": 201,
+            "time": "2002-03-04T05:06:27Z"
+          },
+          {
+            "lat": 20.2005734,
+            "lon": 50.5008734,
+            "ele": 201.5,
+            "time": "2002-03-04T05:06:37Z"
+          },
+          {
+            "lat": 20.2007234,
+            "lon": 50.5011234,
+            "ele": 202,
+            "time": "2002-03-04T05:06:47Z"
+          },
+          {
+            "lat": 20.2008734,
+            "lon": 50.5013734,
+            "ele": 202.5,
+            "time": "2002-03-04T05:06:57Z"
+          },
+          {
+            "lat": 20.2010234,
+            "lon": 50.5016234,
+            "ele": 203,
+            "time": "2002-03-04T05:07:07Z"
+          },
+          {
+            "lat": 20.2011734,
+            "lon": 50.5018734,
+            "ele": 203.5,
+            "time": "2002-03-04T05:07:17Z"
+          },
+          {
+            "lat": 20.2013234,
+            "lon": 50.5021234,
+            "ele": 204,
+            "time": "2002-03-04T05:07:27Z"
+          },
+          {
+            "lat": 20.2014734,
+            "lon": 50.5023734,
+            "ele": 204.5,
+            "time": "2002-03-04T05:07:37Z"
+          }
+        ]
+      ],
+      "pointCount": 10
+    },
+    {
+      "label": "Track No Time",
+      "name": "Gate1 Track No Time",
+      "file": "gate1-desert.gpx",
+      "lists": [
+        "Gate1 Desert"
+      ],
+      "segments": [
+        [
+          {
+            "lat": 20.2101234,
+            "lon": 50.5101234,
+            "ele": 150.5,
+            "time": null
+          },
+          {
+            "lat": 20.2100034,
+            "lon": 50.5103334,
+            "ele": 151.5,
+            "time": null
+          },
+          {
+            "lat": 20.2098834,
+            "lon": 50.5105434,
+            "ele": 152.5,
+            "time": null
+          },
+          {
+            "lat": 20.2097634,
+            "lon": 50.5107534,
+            "ele": 153.5,
+            "time": null
+          },
+          {
+            "lat": 20.2096434,
+            "lon": 50.5109634,
+            "ele": 154.5,
+            "time": null
+          },
+          {
+            "lat": 20.2095234,
+            "lon": 50.5111734,
+            "ele": 155.5,
+            "time": null
+          },
+          {
+            "lat": 20.2094034,
+            "lon": 50.5113834,
+            "ele": 156.5,
+            "time": null
+          },
+          {
+            "lat": 20.2092834,
+            "lon": 50.5115934,
+            "ele": 157.5,
+            "time": null
+          }
+        ]
+      ],
+      "pointCount": 8
+    },
+    {
+      "label": "Track Bare",
+      "name": "Gate1 Track Bare",
+      "file": "gate1-desert.gpx",
+      "lists": [
+        "Gate1 Desert"
+      ],
+      "segments": [
+        [
+          {
+            "lat": 20.2201234,
+            "lon": 50.5201234,
+            "ele": null,
+            "time": null
+          },
+          {
+            "lat": 20.2202134,
+            "lon": 50.5199534,
+            "ele": null,
+            "time": null
+          },
+          {
+            "lat": 20.2203034,
+            "lon": 50.5197834,
+            "ele": null,
+            "time": null
+          },
+          {
+            "lat": 20.2203934,
+            "lon": 50.5196134,
+            "ele": null,
+            "time": null
+          },
+          {
+            "lat": 20.2204834,
+            "lon": 50.5194434,
+            "ele": null,
+            "time": null
+          },
+          {
+            "lat": 20.2205734,
+            "lon": 50.5192734,
+            "ele": null,
+            "time": null
+          }
+        ]
+      ],
+      "pointCount": 6
+    },
+    {
+      "label": "Track Two Segments",
+      "name": "Gate1 Track Two Segments",
+      "file": "gate1-desert.gpx",
+      "lists": [
+        "Gate1 Desert"
+      ],
+      "segments": [
+        [
+          {
+            "lat": 20.2301234,
+            "lon": 50.5301234,
+            "ele": 300.25,
+            "time": "2003-04-05T06:07:08Z"
+          },
+          {
+            "lat": 20.2302334,
+            "lon": 50.5302534,
+            "ele": 300.5,
+            "time": "2003-04-05T06:07:23Z"
+          },
+          {
+            "lat": 20.2303434,
+            "lon": 50.5303834,
+            "ele": 300.75,
+            "time": "2003-04-05T06:07:38Z"
+          },
+          {
+            "lat": 20.2304534,
+            "lon": 50.5305134,
+            "ele": 301,
+            "time": "2003-04-05T06:07:53Z"
+          },
+          {
+            "lat": 20.2305634,
+            "lon": 50.5306434,
+            "ele": 301.25,
+            "time": "2003-04-05T06:08:08Z"
+          },
+          {
+            "lat": 20.2306734,
+            "lon": 50.5307734,
+            "ele": 301.5,
+            "time": "2003-04-05T06:08:23Z"
+          }
+        ],
+        [
+          {
+            "lat": 20.2401234,
+            "lon": 50.5401234,
+            "ele": 310.75,
+            "time": "2003-04-05T07:00:00Z"
+          },
+          {
+            "lat": 20.2402634,
+            "lon": 50.5400434,
+            "ele": 311,
+            "time": "2003-04-05T07:00:15Z"
+          },
+          {
+            "lat": 20.2404034,
+            "lon": 50.5399634,
+            "ele": 311.25,
+            "time": "2003-04-05T07:00:30Z"
+          },
+          {
+            "lat": 20.2405434,
+            "lon": 50.5398834,
+            "ele": 311.5,
+            "time": "2003-04-05T07:00:45Z"
+          },
+          {
+            "lat": 20.2406834,
+            "lon": 50.5398034,
+            "ele": 311.75,
+            "time": "2003-04-05T07:01:00Z"
+          }
+        ]
+      ],
+      "pointCount": 11
+    },
+    {
+      "label": "Twin Track A",
+      "name": "Gate1 Twin Track",
+      "file": "gate1-desert.gpx",
+      "lists": [
+        "Gate1 Desert"
+      ],
+      "segments": [
+        [
+          {
+            "lat": 20.2501234,
+            "lon": 50.5501234,
+            "ele": 250,
+            "time": "2005-06-07T08:09:10Z"
+          },
+          {
+            "lat": 20.2502234,
+            "lon": 50.5502234,
+            "ele": 252,
+            "time": "2005-06-07T08:09:30Z"
+          },
+          {
+            "lat": 20.2503234,
+            "lon": 50.5503234,
+            "ele": 254,
+            "time": "2005-06-07T08:09:50Z"
+          },
+          {
+            "lat": 20.2504234,
+            "lon": 50.5504234,
+            "ele": 256,
+            "time": "2005-06-07T08:10:10Z"
+          },
+          {
+            "lat": 20.2505234,
+            "lon": 50.5505234,
+            "ele": 258,
+            "time": "2005-06-07T08:10:30Z"
+          }
+        ]
+      ],
+      "pointCount": 5
+    },
+    {
+      "label": "Twin Track B",
+      "name": "Gate1 Twin Track",
+      "file": "gate1-deep.gpx",
+      "lists": [
+        "Gate1 Deep"
+      ],
+      "segments": [
+        [
+          {
+            "lat": -35.2601234,
+            "lon": 85.7601234,
+            "ele": 0.5,
+            "time": "2005-06-07T09:00:00Z"
+          },
+          {
+            "lat": -35.2602234,
+            "lon": 85.7602734,
+            "ele": 1,
+            "time": "2005-06-07T09:00:20Z"
+          },
+          {
+            "lat": -35.2603234,
+            "lon": 85.7604234,
+            "ele": 1.5,
+            "time": "2005-06-07T09:00:40Z"
+          },
+          {
+            "lat": -35.2604234,
+            "lon": 85.7605734,
+            "ele": 2,
+            "time": "2005-06-07T09:01:00Z"
+          },
+          {
+            "lat": -35.2605234,
+            "lon": 85.7607234,
+            "ele": 2.5,
+            "time": "2005-06-07T09:01:20Z"
+          },
+          {
+            "lat": -35.2606234,
+            "lon": 85.7608734,
+            "ele": 3,
+            "time": "2005-06-07T09:01:40Z"
+          },
+          {
+            "lat": -35.2607234,
+            "lon": 85.7610234,
+            "ele": 3.5,
+            "time": "2005-06-07T09:02:00Z"
+          }
+        ]
+      ],
+      "pointCount": 7
+    },
+    {
+      "label": "Track Sensors",
+      "name": "Gate1 Track Sensors",
+      "file": "gate1-deep.gpx",
+      "lists": [
+        "Gate1 Deep"
+      ],
+      "segments": [
+        [
+          {
+            "lat": -35.2701234,
+            "lon": 85.7701234,
+            "ele": 5.5,
+            "time": "2004-05-06T07:08:09Z",
+            "hr": 100,
+            "atemp": 20.5
+          },
+          {
+            "lat": -35.2699934,
+            "lon": 85.7702534,
+            "ele": 6,
+            "time": "2004-05-06T07:08:14Z",
+            "hr": 101,
+            "atemp": 20.75
+          },
+          {
+            "lat": -35.2698634,
+            "lon": 85.7703834,
+            "ele": 6.5,
+            "time": "2004-05-06T07:08:19Z",
+            "hr": 102,
+            "atemp": 21
+          },
+          {
+            "lat": -35.2697334,
+            "lon": 85.7705134,
+            "ele": 7,
+            "time": "2004-05-06T07:08:24Z",
+            "hr": 103,
+            "atemp": 21.25
+          },
+          {
+            "lat": -35.2696034,
+            "lon": 85.7706434,
+            "ele": 7.5,
+            "time": "2004-05-06T07:08:29Z",
+            "hr": 104,
+            "atemp": 21.5
+          },
+          {
+            "lat": -35.2694734,
+            "lon": 85.7707734,
+            "ele": 8,
+            "time": "2004-05-06T07:08:34Z",
+            "hr": 105,
+            "atemp": 21.75
+          },
+          {
+            "lat": -35.2693434,
+            "lon": 85.7709034,
+            "ele": 8.5,
+            "time": "2004-05-06T07:08:39Z",
+            "hr": 106,
+            "atemp": 22
+          },
+          {
+            "lat": -35.2692134,
+            "lon": 85.7710334,
+            "ele": 9,
+            "time": "2004-05-06T07:08:44Z",
+            "hr": 107,
+            "atemp": 22.25
+          },
+          {
+            "lat": -35.2690834,
+            "lon": 85.7711634,
+            "ele": 9.5,
+            "time": "2004-05-06T07:08:49Z",
+            "hr": 108,
+            "atemp": 22.5
+          }
+        ]
+      ],
+      "pointCount": 9
+    }
+  ],
+  "counts": {
+    "folders": 2,
+    "lists": 3,
+    "waypoints": 6,
+    "routeViaPoints": 4,
+    "routes": 1,
+    "tracks": 7,
+    "trackPoints": 56,
+    "itemsInTwoLists": 2
+  }
+}

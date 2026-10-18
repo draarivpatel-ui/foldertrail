@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Answers about Foldertrail: which BaseCamp libraries it reads, whether anything is uploaded, how folders show up in other apps, what it costs, and its limits.">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Foldertrail">
+  <meta property="og:title" content="Foldertrail FAQ">
+  <meta property="og:description" content="Which BaseCamp libraries Foldertrail reads, what happens to your files, and how your folders show up in other apps.">
+  <title>Foldertrail · Questions and answers</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/base.css">
+  <link rel="stylesheet" href="../assets/app.css">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body class="page-faq">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="masthead">
+    <div class="masthead-inner site-masthead">
+      <a class="brand" href="../">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Foldertrail</span>
+      </a>
+      <span class="brand-desc">for Garmin BaseCamp libraries</span>
+      <nav class="site-nav" aria-label="Site">
+        <ul class="site-nav-list">
+          <li><a href="../guide/">Guide</a></li>
+          <li><a href="./" aria-current="page">FAQ</a></li>
+          <li><a href="../privacy/">Privacy</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-small site-cta" href="../app/">Open the converter</a>
+    </div>
+  </header>
+
+  <div class="shell">
+    <nav class="toc" aria-label="On this page">
+      <ol class="toc-list">
+        <li><a href="#start">Before you start</a></li>
+        <li><a href="#privacy">Your files</a></li>
+        <li><a href="#results">The results</a></li>
+        <li><a href="#buying">Price</a></li>
+        <li><a href="#help">Help</a></li>
+      </ol>
+    </nav>
+
+    <main id="main" class="main prose" tabindex="-1">
+      <h1>Questions and answers</h1>
+      <p class="lead">Short answers. The <a href="../guide/">guide</a> has the step-by-step version.</p>
+
+      <h2 id="start">Before you start</h2>
+      <div class="qa">
+        <h3>Do I need BaseCamp installed?</h3>
+        <p>No. Foldertrail reads the library files themselves, so it works after BaseCamp stops opening. If BaseCamp
+          still opens, a backup file (File › Backup) is the simplest thing to drop in.</p>
+      </div>
+      <div class="qa">
+        <h3>Which libraries can it read?</h3>
+        <p>The library folder BaseCamp for Mac keeps (a folder named like <span class="mono">4.8</span>), a BaseCamp
+          backup file, or a <span class="mono">.bclibrary</span> package. The guide shows
+          <a href="../guide/#find">where to find your library</a>.</p>
+        <p>If your library is in a format Foldertrail can’t read, the free preview tells you.</p>
+      </div>
+      <div class="qa">
+        <h3>Which browsers work?</h3>
+        <p>Current versions of Safari, Chrome and Firefox on a Mac.</p>
+      </div>
+      <div class="qa">
+        <h3>Does it work with BaseCamp for Windows, or on a phone?</h3>
+        <p>It’s made for libraries from BaseCamp for Mac. Libraries from BaseCamp for Windows may work, but they
+          haven’t been checked yet. On a phone it can’t help, because your library is on your computer.</p>
+      </div>
+      <div class="qa">
+        <h3>I have an Intel Mac, or I’m staying on macOS 27. Do I need this?</h3>
+        <p>Not urgently: BaseCamp keeps running there. Foldertrail is still useful if you want your library in other
+          apps with its folders kept.</p>
+      </div>
+
+      <h2 id="privacy">Your files</h2>
+      <div class="qa">
+        <h3>Is my library uploaded?</h3>
+        <p>No. The page reads your library inside your browser, on your computer, and makes your download there
+          too. The <a href="../privacy/">privacy page</a> has the details.</p>
+      </div>
+      <div class="qa">
+        <h3>What does the license check send?</h3>
+        <p>Your license key and Foldertrail’s product ID, to the payment provider (Polar or Gumroad), when you
+          unlock the download. If your key is saved in the browser, it is checked again at most once per browser
+          session, when you open the converter. Nothing from your library goes with it.</p>
+      </div>
+      <div class="qa">
+        <h3>Does it change my library?</h3>
+        <p>No. Foldertrail only reads it. Keeping a safety copy is still a good idea: the guide shows
+          <a href="../guide/#copy">how to make one</a>.</p>
+      </div>
+
+      <h2 id="results">The results</h2>
+      <div class="qa">
+        <h3>Will my folders show up in Garmin Explore, Gaia GPS or CalTopo?</h3>
+        <p>GPX files can’t hold folders, so your folders come out as folders of files on your Mac. Each app then
+          shows them its own way. Gaia GPS makes one folder per imported file. Garmin’s help for Explore doesn’t
+          describe collections inside collections. CalTopo sorts imports into its own folders. Google Earth shows
+          the whole tree from the KML file. The guide has
+          <a href="../guide/#apps">the steps for each app</a>.</p>
+      </div>
+      <div class="qa">
+        <h3>Why are my routes straight lines?</h3>
+        <p>Foldertrail writes each route as straight lines through its via points; a GPS device can work out the
+          roads again when you navigate it. Routes that BaseCamp calculated along roads aren’t converted in this
+          version: the preview lists them under “What will not convert”, and the report names them.</p>
+      </div>
+      <div class="qa">
+        <h3>An item is in several lists. Will I get copies?</h3>
+        <p>Each list’s file includes it, so importing several lists gives you several copies. To avoid that, import
+          one list at a time, or <span class="mono">All items.gpx</span> once.</p>
+      </div>
+      <div class="qa">
+        <h3>Some items aren’t where I expected. Why?</h3>
+        <p>BaseCamp’s lists point to items by name. When two items of the same kind share a name, Foldertrail can’t
+          tell which one a list means, so it doesn’t guess: every copy goes into a
+          <span class="mono">_Duplicate names</span> folder, and the report names the lists that refer to them. Items that are in no list go into
+          <span class="mono">Not in any list.gpx</span>.</p>
+      </div>
+      <div class="qa">
+        <h3>What doesn’t convert?</h3>
+        <p>BirdsEye imagery, custom maps, Adventures, geocache logs and photos. When Foldertrail finds some of these
+          in your library, such as BirdsEye imagery, the preview and the report mention them. The report also lists
+          anything else that couldn’t be read.</p>
+      </div>
+
+      <h2 id="buying">Price</h2>
+      <div class="qa">
+        <h3>What does it cost?</h3>
+        <p>The preview is free. Downloading the files will need a license key; the planned price is
+          <span data-config="priceDisplay">$19</span>.</p>
+        <div class="notice notice-info">
+          <span class="icon icon-lock" aria-hidden="true"></span>
+          <p>Not on sale yet: Foldertrail isn’t on sale, so downloading is switched off for now. The preview is
+            complete and free in the meantime.</p>
+        </div>
+      </div>
+      <div class="qa">
+        <h3>What if my library doesn’t convert cleanly?</h3>
+        <p>Foldertrail has been checked against real libraries made in BaseCamp 4.8.13 for Mac (with made-up
+          content), but yours may hold something we haven’t seen yet. That is why the preview
+          is free: it shows your tree and what it found that won’t convert, so you can check it against your library
+          (in BaseCamp, if it still opens) before you pay.</p>
+      </div>
+
+      <h2 id="help">Help</h2>
+      <div class="qa">
+        <h3>Is Foldertrail made by Garmin?</h3>
+        <p>No. It’s an independent tool, not affiliated with, endorsed by, or sponsored by Garmin.</p>
+      </div>
+      <div class="qa">
+        <h3>Something looks wrong. How do I get help?</h3>
+        <p>Use the diagnostic report on the converter page. It describes only the structure of your library files,
+          with no names, places or file paths, so you can share it safely. A support address will be listed here
+          when Foldertrail goes on sale.</p>
+      </div>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="../app/">Converter</a>
+        <a href="../guide/">Guide</a>
+        <a href="./">FAQ</a>
+        <a href="../privacy/">Privacy</a>
+      </nav>
+      <p>Foldertrail is an independent tool, not affiliated with, endorsed by, or sponsored by Garmin Ltd. or its
+        subsidiaries. Garmin and BaseCamp are trademarks of Garmin Ltd. or its subsidiaries.</p>
+      <p class="footer-meta">Runs in your browser. Nothing is uploaded.</p>
+    </div>
+  </footer>
+</body>
+</html>

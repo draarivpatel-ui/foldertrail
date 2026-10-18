@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, 'Helvetica Neue', Arial, sans-serif">
+  <title>Foldertrail. Keep the folders you built in BaseCamp. An example tree of folders and lists in BaseCamp, and the same folders in the download as GPX files.</title>
+  <defs>
+    <symbol id="i-folder" viewBox="0 0 16 16" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 4.1c0-.64.52-1.15 1.15-1.15h3.05l1.55 1.6h5.6c.63 0 1.15.51 1.15 1.15v6.35c0 .64-.52 1.15-1.15 1.15H2.9c-.63 0-1.15-.51-1.15-1.15z"/><path d="M1.75 6.6h12.5"/></symbol>
+    <symbol id="i-list" viewBox="0 0 16 16" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4.25h7.75M6 8h7.75M6 11.75h7.75"/><path d="M2.6 4.25h.3M2.6 8h.3M2.6 11.75h.3" stroke-width="2.1"/></symbol>
+    <symbol id="i-file" viewBox="0 0 16 16" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9.25 1.75H4.4c-.63 0-1.15.52-1.15 1.15v10.2c0 .63.52 1.15 1.15 1.15h7.2c.63 0 1.15-.52 1.15-1.15V5.25z"/><path d="M9.25 1.75v3.5h3.5"/></symbol>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#17201b" flood-opacity="0.06"/>
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#17201b" flood-opacity="0.07"/>
+    </filter>
+    <clipPath id="clip-a"><rect x="72" y="594" width="424" height="526" rx="14.4"/></clipPath>
+    <clipPath id="clip-b"><rect x="584" y="594" width="424" height="526" rx="14.4"/></clipPath>
+  </defs>
+  <rect width="1080" height="1080" fill="#f2f3ef"/>
+  <rect x="72" y="594" width="424" height="526" rx="14.4" fill="#ffffff" filter="url(#shadow)"/>
+  <rect x="584" y="594" width="424" height="526" rx="14.4" fill="#ffffff" filter="url(#shadow)"/>
+  <g clip-path="url(#clip-a)">
+    <rect x="72" y="594" width="424" height="526" fill="#ffffff"/>
+    <rect x="72" y="594" width="424" height="48" fill="#f7f8f5"/>
+    <path d="M72 641.5h424" stroke="#dde1da" stroke-width="1"/>
+    <text x="91.2" y="623.52" font-size="15.6" font-weight="620" fill="#17201b">In BaseCamp</text>
+    <text x="476.8" y="623.52" font-size="15.6" fill="#5f6a64" text-anchor="end">Your library</text>
+    <use href="#i-folder" x="90" y="661.2" width="19.2" height="19.2" stroke="#48524c"/>
+    <text x="118.8" y="677.28" font-size="18" font-weight="600" fill="#17201b">My Collection</text>
+    <path d="M100.5 690V728.4" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <path d="M100.5 709.2H111.6" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <use href="#i-folder" x="114" y="699.6" width="19.2" height="19.2" stroke="#48524c"/>
+    <text x="142.8" y="715.68" font-size="18" font-weight="600" fill="#17201b">Hiking</text>
+    <path d="M100.5 728.4V766.8" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <path d="M124.5 728.4V766.8" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <path d="M124.5 747.6H135.6" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <use href="#i-list" x="138" y="738" width="19.2" height="19.2" stroke="#1d6a4f"/>
+    <text x="166.8" y="754.08" font-size="18" font-weight="400" fill="#17201b">Lakes loop<tspan dx="9.6" font-size="15.6" font-weight="400" fill="#5f6a64">24 waypoints, 3 tracks</tspan></text>
+    <path d="M100.5 766.8V805.2" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <path d="M124.5 766.8V786" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <path d="M124.5 786H135.6" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <use href="#i-list" x="138" y="776.4" width="19.2" height="19.2" stroke="#1d6a4f"/>
+    <text x="166.8" y="792.48" font-size="18" font-weight="400" fill="#17201b">Ridge walks<tspan dx="9.6" font-size="15.6" font-weight="400" fill="#5f6a64">9 waypoints, 5 tracks</tspan></text>
+    <path d="M100.5 805.2V843.6" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <path d="M100.5 824.4H111.6" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <use href="#i-folder" x="114" y="814.8" width="19.2" height="19.2" stroke="#48524c"/>
+    <text x="142.8" y="830.88" font-size="18" font-weight="600" fill="#17201b">Cycling</text>
+    <path d="M100.5 843.6V882" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <path d="M124.5 843.6V862.8" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <path d="M124.5 862.8H135.6" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <use href="#i-list" x="138" y="853.2" width="19.2" height="19.2" stroke="#1d6a4f"/>
+    <text x="166.8" y="869.28" font-size="18" font-weight="400" fill="#17201b">Gravel rides<tspan dx="9.6" font-size="15.6" font-weight="400" fill="#5f6a64">12 tracks, 2 routes</tspan></text>
+    <path d="M100.5 882V901.2" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <path d="M100.5 901.2H111.6" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <use href="#i-list" x="114" y="891.6" width="19.2" height="19.2" stroke="#1d6a4f"/>
+    <text x="142.8" y="907.68" font-size="18" font-weight="400" fill="#17201b">Favorite places<tspan dx="9.6" font-size="15.6" font-weight="400" fill="#5f6a64">41 waypoints</tspan></text>
+    </g>
+    <rect x="72.5" y="594.5" width="423" height="525" rx="14.4" fill="none" stroke="#dde1da"/>
+  <g clip-path="url(#clip-b)">
+    <rect x="584" y="594" width="424" height="526" fill="#ffffff"/>
+    <rect x="584" y="594" width="424" height="48" fill="#f7f8f5"/>
+    <path d="M584 641.5h424" stroke="#dde1da" stroke-width="1"/>
+    <text x="603.2" y="623.52" font-size="15.6" font-weight="620" fill="#17201b">In your download</text>
+    <text x="988.8" y="623.52" font-size="15.6" fill="#5f6a64" text-anchor="end">One ZIP file</text>
+    <use href="#i-folder" x="602" y="661.2" width="19.2" height="19.2" stroke="#48524c"/>
+    <text x="630.8" y="677.28" font-size="18" font-weight="600" fill="#17201b">GPX</text>
+    <path d="M612.5 690V709.2" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <path d="M612.5 709.2H623.6" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <use href="#i-folder" x="626" y="699.6" width="19.2" height="19.2" stroke="#48524c"/>
+    <text x="654.8" y="715.68" font-size="18" font-weight="600" fill="#17201b">My Collection</text>
+    <path d="M636.5 728.4V766.8" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <path d="M636.5 747.6H647.6" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <use href="#i-folder" x="650" y="738" width="19.2" height="19.2" stroke="#48524c"/>
+    <text x="678.8" y="754.08" font-size="18" font-weight="600" fill="#17201b">Hiking</text>
+    <path d="M636.5 766.8V805.2" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <path d="M660.5 766.8V805.2" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <path d="M660.5 786H671.6" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <use href="#i-file" x="674" y="776.4" width="19.2" height="19.2" stroke="#1d6a4f"/>
+    <text x="702.8" y="792.48" font-size="18" font-weight="400" fill="#17201b">Lakes loop.gpx</text>
+    <path d="M636.5 805.2V843.6" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <path d="M660.5 805.2V824.4" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <path d="M660.5 824.4H671.6" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <use href="#i-file" x="674" y="814.8" width="19.2" height="19.2" stroke="#1d6a4f"/>
+    <text x="702.8" y="830.88" font-size="18" font-weight="400" fill="#17201b">Ridge walks.gpx</text>
+    <path d="M636.5 843.6V882" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <path d="M636.5 862.8H647.6" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <use href="#i-folder" x="650" y="853.2" width="19.2" height="19.2" stroke="#48524c"/>
+    <text x="678.8" y="869.28" font-size="18" font-weight="600" fill="#17201b">Cycling</text>
+    <path d="M636.5 882V920.4" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <path d="M660.5 882V901.2" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <path d="M660.5 901.2H671.6" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <use href="#i-file" x="674" y="891.6" width="19.2" height="19.2" stroke="#1d6a4f"/>
+    <text x="702.8" y="907.68" font-size="18" font-weight="400" fill="#17201b">Gravel rides.gpx</text>
+    <path d="M636.5 920.4V939.6" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <path d="M636.5 939.6H647.6" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <use href="#i-file" x="650" y="930" width="19.2" height="19.2" stroke="#1d6a4f"/>
+    <text x="678.8" y="946.08" font-size="18" font-weight="400" fill="#17201b">Favorite places.gpx</text>
+    <use href="#i-folder" x="602" y="968.4" width="19.2" height="19.2" stroke="#48524c"/>
+    <text x="630.8" y="984.48" font-size="18" font-weight="600" fill="#17201b">KML</text>
+    <path d="M612.5 997.2V1016.4" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <path d="M612.5 1016.4H623.6" stroke="#cfa57a" stroke-width="1.8" stroke-dasharray="4.8 2.4"/>
+    <use href="#i-file" x="626" y="1006.8" width="19.2" height="19.2" stroke="#48524c"/>
+    <text x="654.8" y="1022.88" font-size="18" font-weight="400" fill="#17201b">My Collection.kml</text>
+    <use href="#i-file" x="602" y="1045.2" width="19.2" height="19.2" stroke="#48524c"/>
+    <text x="630.8" y="1061.28" font-size="18" font-weight="400" fill="#17201b">report.html</text>
+    </g>
+    <rect x="584.5" y="594.5" width="423" height="525" rx="14.4" fill="none" stroke="#dde1da"/>
+  <g transform="translate(72 64) scale(1.71)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3.25 8.4c0-1.1.9-2 2-2h5.05l2.4 2.45H22.75c1.1 0 2 .9 2 2V21c0 1.1-.9 2-2 2H5.25c-1.1 0-2-.9-2-2z" stroke="#17201b" stroke-width="2"/>
+    <path d="M7.4 19.6c2.2-.1 2.75-3.9 5.6-3.95 2.95-.05 3.1 2.75 5.35 1.55 1.2-.65 1.55-2.15 2.15-3.05" stroke="#a8692b" stroke-width="1.7" stroke-dasharray="1.7 2.1"/>
+    <circle cx="21.1" cy="12.85" r="1.75" fill="#a8692b"/>
+  </g>
+  <text x="135.36" y="100.43" font-size="35" font-weight="680" letter-spacing="-0.022em" fill="#17201b">Foldertrail</text>
+  <text font-size="88" font-weight="700" letter-spacing="-0.032em" fill="#17201b"><tspan x="68" y="236">Keep the folders</tspan><tspan x="68" y="330">you built in</tspan><tspan x="68" y="424">BaseCamp</tspan></text>
+  <text font-size="29" fill="#48524c"><tspan x="72" y="490">GPX files in the same folders and lists.</tspan><tspan x="72" y="530">It runs in your browser; nothing is uploaded.</tspan></text>
+  <text x="1008" y="94" font-size="18" fill="#5f6a64" text-anchor="end">Not affiliated with Garmin</text>
+  <g transform="translate(498.6 770.7) scale(0.9)">
+    <path d="M4 25C16 25.5 18 10 32 10s16 15.5 30 14c8-.8 13-6.5 19-11" fill="none" stroke="#a8692b" stroke-width="1.75" stroke-linecap="round" stroke-dasharray="1.75 3.6"/>
+    <circle cx="85.5" cy="10.5" r="3.4" fill="#a8692b"/>
+  </g>
+</svg>

@@ -1,0 +1,569 @@
+/* Foldertrail: brand tokens and the parts every page shares (masthead, footer, buttons, notices, icons).
+   The converter adds app.css on top. Other pages can use this file alone.
+   Content-Security-Policy: this is a same-origin stylesheet; no page may use <style> or style="". */
+
+/* ------------------------------------------------------------------------------------------------
+   Tokens. Light is the default; dark follows the system setting. Colours come from paper maps:
+   ink, a spruce green for actions, and contour brown for the trail lines that draw the folder tree. */
+
+:root {
+  color-scheme: light dark;
+
+  --ground: #f2f3ef;
+  --panel: #ffffff;
+  --panel-2: #f7f8f5;
+  --panel-sunk: #eceee9;
+  --ink: #17201b;
+  --ink-2: #48524c;
+  --ink-3: #5f6a64;
+  --line: #dde1da;
+  --line-strong: #c2c8c0;
+  --field-line: #8b938d;
+  --accent: #1d6a4f;
+  --accent-hover: #175a42;
+  --accent-ink: #ffffff;
+  --accent-wash: #e2eee7;
+  --accent-line: #a8ccb8;
+  --trail: #a8692b;
+  --trail-line: #cfa57a;
+  --warn: #7a4e00;
+  --warn-wash: #fbf3dd;
+  --warn-line: #e8d29a;
+  --bad: #a1291e;
+  --bad-wash: #fcebe8;
+  --bad-line: #efc1b9;
+  --focus: #1d6a4f;
+  --shadow-1: 0 1px 1px rgba(23, 32, 27, 0.05);
+  --shadow-2: 0 1px 2px rgba(23, 32, 27, 0.06), 0 4px 14px rgba(23, 32, 27, 0.05);
+
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+
+  --r-sm: 6px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 14px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #111412;
+    --panel: #191d1a;
+    --panel-2: #1e2320;
+    --panel-sunk: #151816;
+    --ink: #e7ebe7;
+    --ink-2: #b3bcb6;
+    --ink-3: #939d97;
+    --line: #2b312d;
+    --line-strong: #414944;
+    --field-line: #6c746e;
+    --accent: #5ebf94;
+    --accent-hover: #77cca6;
+    --accent-ink: #0a1d14;
+    --accent-wash: #16301f;
+    --accent-line: #2c5a45;
+    --trail: #c8945c;
+    --trail-line: #7d6246;
+    --warn: #eec46c;
+    --warn-wash: #2b2412;
+    --warn-line: #5a4a22;
+    --bad: #f29b8f;
+    --bad-wash: #341c19;
+    --bad-line: #6a3029;
+    --focus: #5ebf94;
+    --shadow-1: 0 1px 1px rgba(0, 0, 0, 0.3);
+    --shadow-2: 0 1px 2px rgba(0, 0, 0, 0.35), 0 6px 18px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* ------------------------------------------------------------------------------------------------
+   Base */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  caret-color: var(--accent);
+  accent-color: var(--accent);
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+::selection {
+  background: var(--accent-wash);
+  color: var(--ink);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 650;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: 1.75rem;
+  line-height: 1.2;
+  letter-spacing: -0.018em;
+}
+
+h2 {
+  font-size: 1.1875rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+code,
+kbd,
+pre,
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+kbd {
+  display: inline-block;
+  min-width: 1.6em;
+  padding: 0 0.35em;
+  margin: 0 0.08em;
+  border: 1px solid var(--line-strong);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 0.82em;
+  line-height: 1.55;
+  text-align: center;
+  vertical-align: 0.08em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Headings take focus when a step changes (for screen readers); they are not controls, so no ring. */
+[tabindex="-1"]:focus {
+  outline: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 10;
+  padding: 8px 14px;
+  border-radius: var(--r-md);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+/* ------------------------------------------------------------------------------------------------
+   Icons: drawn SVGs used as masks, so they take the colour of the text around them. */
+
+.icon {
+  display: inline-block;
+  flex: none;
+  inline-size: 1em;
+  block-size: 1em;
+  background-color: currentColor;
+  -webkit-mask: no-repeat center / contain;
+  mask: no-repeat center / contain;
+  vertical-align: -0.125em;
+}
+
+.icon-folder { -webkit-mask-image: url(icons/folder.svg); mask-image: url(icons/folder.svg); }
+.icon-list { -webkit-mask-image: url(icons/list.svg); mask-image: url(icons/list.svg); }
+.icon-waypoint { -webkit-mask-image: url(icons/waypoint.svg); mask-image: url(icons/waypoint.svg); }
+.icon-track { -webkit-mask-image: url(icons/track.svg); mask-image: url(icons/track.svg); }
+.icon-route { -webkit-mask-image: url(icons/route.svg); mask-image: url(icons/route.svg); }
+.icon-chevron { -webkit-mask-image: url(icons/chevron.svg); mask-image: url(icons/chevron.svg); }
+.icon-lock { -webkit-mask-image: url(icons/lock.svg); mask-image: url(icons/lock.svg); }
+.icon-check { -webkit-mask-image: url(icons/check.svg); mask-image: url(icons/check.svg); }
+.icon-alert { -webkit-mask-image: url(icons/alert.svg); mask-image: url(icons/alert.svg); }
+.icon-info { -webkit-mask-image: url(icons/info.svg); mask-image: url(icons/info.svg); }
+.icon-copy { -webkit-mask-image: url(icons/copy.svg); mask-image: url(icons/copy.svg); }
+.icon-download { -webkit-mask-image: url(icons/download.svg); mask-image: url(icons/download.svg); }
+.icon-external { -webkit-mask-image: url(icons/external.svg); mask-image: url(icons/external.svg); }
+.icon-key { -webkit-mask-image: url(icons/key.svg); mask-image: url(icons/key.svg); }
+.icon-stop { -webkit-mask-image: url(icons/stop.svg); mask-image: url(icons/stop.svg); }
+.icon-file { -webkit-mask-image: url(icons/file.svg); mask-image: url(icons/file.svg); }
+.icon-drop { -webkit-mask-image: url(icons/drop.svg); mask-image: url(icons/drop.svg); }
+
+/* ------------------------------------------------------------------------------------------------
+   Masthead and wordmark */
+
+.masthead {
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.masthead-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 13px 24px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--ink);
+  text-decoration: none;
+  border-radius: var(--r-sm);
+}
+
+.brand:hover {
+  color: var(--ink);
+}
+
+.brand-mark {
+  position: relative;
+  inline-size: 28px;
+  block-size: 28px;
+  flex: none;
+}
+
+.brand-mark::before,
+.brand-mark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  -webkit-mask: no-repeat center / contain;
+  mask: no-repeat center / contain;
+}
+
+.brand-mark::before {
+  background: var(--ink);
+  -webkit-mask-image: url(mark-folder.svg);
+  mask-image: url(mark-folder.svg);
+}
+
+.brand-mark::after {
+  background: var(--trail);
+  -webkit-mask-image: url(mark-trail.svg);
+  mask-image: url(mark-trail.svg);
+}
+
+.brand-name {
+  font-size: 1.1875rem;
+  font-weight: 680;
+  letter-spacing: -0.022em;
+}
+
+.brand-desc {
+  padding-left: 14px;
+  border-left: 1px solid var(--line-strong);
+  color: var(--ink-3);
+  font-size: 0.875rem;
+  line-height: 1.3;
+}
+
+/* ------------------------------------------------------------------------------------------------
+   Footer */
+
+.footer {
+  margin-top: auto;
+  border-top: 1px solid var(--line);
+}
+
+.footer-inner {
+  display: grid;
+  gap: 6px;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 22px 24px 32px;
+  color: var(--ink-3);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.footer-inner p {
+  max-width: 82ch;
+}
+
+/* Page links above the non-affiliation line (every page, the converter included). */
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin-bottom: 6px;
+}
+
+.footer-nav a {
+  color: var(--ink-2);
+  font-size: 0.875rem;
+  font-weight: 550;
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+.footer-nav a[aria-current="page"] {
+  color: var(--ink);
+}
+
+/* ------------------------------------------------------------------------------------------------
+   Buttons */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-md);
+  background: var(--panel);
+  box-shadow: var(--shadow-1);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 550;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease, box-shadow 140ms ease;
+}
+
+.btn:hover {
+  background: var(--panel-2);
+  border-color: var(--ink-3);
+  color: var(--ink);
+}
+
+.btn:active {
+  background: var(--panel-sunk);
+  box-shadow: none;
+}
+
+.btn .icon {
+  font-size: 1rem;
+}
+
+.btn-primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn-primary:hover {
+  border-color: var(--accent-hover);
+  background: var(--accent-hover);
+  color: var(--accent-ink);
+}
+
+.btn-primary:active {
+  background: var(--accent-hover);
+}
+
+.btn-large {
+  min-height: 44px;
+  padding: 0 20px;
+  font-size: 1rem;
+}
+
+.btn-small {
+  min-height: 30px;
+  padding: 0 10px;
+  font-size: 0.875rem;
+}
+
+.btn-quiet {
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+  color: var(--accent);
+}
+
+.btn-quiet:hover {
+  border-color: transparent;
+  background: var(--accent-wash);
+  color: var(--accent-hover);
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  border-color: var(--line);
+  background: var(--panel-2);
+  box-shadow: none;
+  color: var(--ink-3);
+  cursor: not-allowed;
+}
+
+.btn-quiet:disabled {
+  background: transparent;
+}
+
+.link-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  cursor: pointer;
+}
+
+.link-button:hover {
+  color: var(--accent-hover);
+}
+
+/* ------------------------------------------------------------------------------------------------
+   Notices: a tinted panel with an icon. Never a thick coloured side stripe. */
+
+.notice {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--panel-2);
+  color: var(--ink);
+  font-size: 0.9375rem;
+}
+
+.notice > .icon {
+  margin-top: 0.2em;
+  font-size: 1.05rem;
+}
+
+.notice-title {
+  margin-bottom: 2px;
+  font-weight: 620;
+}
+
+.notice-list {
+  margin: 4px 0 0;
+  padding-left: 1.1em;
+}
+
+.notice-list li + li {
+  margin-top: 4px;
+}
+
+.notice-info > .icon {
+  color: var(--ink-2);
+}
+
+.notice-warn {
+  border-color: var(--warn-line);
+  background: var(--warn-wash);
+}
+
+.notice-warn > .icon,
+.notice-warn .notice-title {
+  color: var(--warn);
+}
+
+.notice-bad {
+  border-color: var(--bad-line);
+  background: var(--bad-wash);
+}
+
+.notice-bad > .icon,
+.notice-bad .notice-title {
+  color: var(--bad);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .masthead-inner {
+    padding: 11px 16px;
+    gap: 10px;
+  }
+
+  .brand-desc {
+    padding-left: 10px;
+    font-size: 0.8125rem;
+  }
+
+  .footer-inner {
+    padding: 20px 16px 28px;
+  }
+}

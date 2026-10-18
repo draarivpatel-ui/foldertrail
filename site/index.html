@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Turn your Garmin BaseCamp library into GPX files in the same folders and lists, plus a KML for Google Earth and a report. It runs in your browser; nothing is uploaded.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Foldertrail">
+  <meta property="og:title" content="Foldertrail: your BaseCamp library as GPX files, folders kept">
+  <meta property="og:description" content="Turn your Garmin BaseCamp library into GPX files in the same folders and lists. It runs in your browser; nothing is uploaded.">
+  <title>Foldertrail · Your BaseCamp library as GPX files, folders kept</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/base.css">
+  <link rel="stylesheet" href="assets/app.css">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="page-home">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="masthead">
+    <div class="masthead-inner site-masthead">
+      <a class="brand" href="./">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Foldertrail</span>
+      </a>
+      <span class="brand-desc">for Garmin BaseCamp libraries</span>
+      <nav class="site-nav" aria-label="Site">
+        <ul class="site-nav-list">
+          <li><a href="guide/">Guide</a></li>
+          <li><a href="faq/">FAQ</a></li>
+          <li><a href="privacy/">Privacy</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-small site-cta" href="app/">Open the converter</a>
+    </div>
+  </header>
+
+  <main id="main" class="home" tabindex="-1">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <h1 class="hero-title" id="hero-title">Keep the folders you built in BaseCamp</h1>
+      <p class="hero-lead">Foldertrail turns your Garmin BaseCamp library into GPX files, laid out in the same folders
+        and lists you made. You also get a KML file for Google Earth and a report of what converted. It all happens in
+        your browser: your library is never uploaded.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-large" href="app/">Try the free preview</a>
+        <a class="btn btn-large" href="guide/">Read the guide</a>
+      </div>
+      <p class="hero-note"><span class="icon icon-lock" aria-hidden="true"></span><span>The preview is free. It shows
+        your whole folder tree, and anything that won’t convert.</span></p>
+
+      <figure class="compare">
+        <div class="compare-grid" aria-hidden="true">
+          <div class="ft-card">
+            <p class="ft-card-head"><span class="ft-card-title">In BaseCamp</span><span>Your library</span></p>
+            <ul class="ft-list">
+              <li class="ft-row is-folder"><span class="icon icon-folder ft-icon"></span><span class="ft-name">My Collection</span></li>
+              <li class="ft-row is-folder"><span class="guides"><span class="g g-tee"></span></span><span class="icon icon-folder ft-icon"></span><span class="ft-name">Hiking</span></li>
+              <li class="ft-row is-list"><span class="guides"><span class="g g-pipe"></span><span class="g g-tee"></span></span><span class="icon icon-list ft-icon"></span><span class="ft-text"><span class="ft-name">Lakes loop</span><span class="ft-sub">24 waypoints, 3 tracks</span></span></li>
+              <li class="ft-row is-list"><span class="guides"><span class="g g-pipe"></span><span class="g g-elbow"></span></span><span class="icon icon-list ft-icon"></span><span class="ft-text"><span class="ft-name">Ridge walks</span><span class="ft-sub">9 waypoints, 5 tracks</span></span></li>
+              <li class="ft-row is-folder"><span class="guides"><span class="g g-tee"></span></span><span class="icon icon-folder ft-icon"></span><span class="ft-name">Cycling</span></li>
+              <li class="ft-row is-list"><span class="guides"><span class="g g-pipe"></span><span class="g g-elbow"></span></span><span class="icon icon-list ft-icon"></span><span class="ft-text"><span class="ft-name">Gravel rides</span><span class="ft-sub">12 tracks, 2 routes</span></span></li>
+              <li class="ft-row is-list"><span class="guides"><span class="g g-elbow"></span></span><span class="icon icon-list ft-icon"></span><span class="ft-text"><span class="ft-name">Favorite places</span><span class="ft-sub">41 waypoints</span></span></li>
+            </ul>
+            <p class="ft-card-foot">Folders hold lists; lists hold your waypoints, tracks and routes.</p>
+          </div>
+
+          <div class="compare-link">
+            <svg class="trail-svg" viewBox="0 0 92 34" focusable="false"><path class="trail-path" d="M4 25C16 25.5 18 10 32 10s16 15.5 30 14c8-.8 13-6.5 19-11"/><circle class="trail-dot" cx="85.5" cy="10.5" r="3.4"/></svg>
+          </div>
+
+          <div class="ft-card">
+            <p class="ft-card-head"><span class="ft-card-title">In your download</span><span>One ZIP file</span></p>
+            <ul class="ft-list">
+              <li class="ft-row is-folder"><span class="icon icon-folder ft-icon"></span><span class="ft-name">GPX</span></li>
+              <li class="ft-row is-folder"><span class="guides"><span class="g g-elbow"></span></span><span class="icon icon-folder ft-icon"></span><span class="ft-name">My Collection</span></li>
+              <li class="ft-row is-folder"><span class="guides"><span class="g"></span><span class="g g-tee"></span></span><span class="icon icon-folder ft-icon"></span><span class="ft-name">Hiking</span></li>
+              <li class="ft-row is-gpx"><span class="guides"><span class="g"></span><span class="g g-pipe"></span><span class="g g-tee"></span></span><span class="icon icon-file ft-icon"></span><span class="ft-name">Lakes loop.gpx</span></li>
+              <li class="ft-row is-gpx"><span class="guides"><span class="g"></span><span class="g g-pipe"></span><span class="g g-elbow"></span></span><span class="icon icon-file ft-icon"></span><span class="ft-name">Ridge walks.gpx</span></li>
+              <li class="ft-row is-folder"><span class="guides"><span class="g"></span><span class="g g-tee"></span></span><span class="icon icon-folder ft-icon"></span><span class="ft-name">Cycling</span></li>
+              <li class="ft-row is-gpx"><span class="guides"><span class="g"></span><span class="g g-pipe"></span><span class="g g-elbow"></span></span><span class="icon icon-file ft-icon"></span><span class="ft-name">Gravel rides.gpx</span></li>
+              <li class="ft-row is-gpx"><span class="guides"><span class="g"></span><span class="g g-elbow"></span></span><span class="icon icon-file ft-icon"></span><span class="ft-name">Favorite places.gpx</span></li>
+              <li class="ft-row is-folder"><span class="icon icon-folder ft-icon"></span><span class="ft-name">KML</span></li>
+              <li class="ft-row"><span class="guides"><span class="g g-elbow"></span></span><span class="icon icon-file ft-icon"></span><span class="ft-name">My Collection.kml</span></li>
+              <li class="ft-row"><span class="icon icon-file ft-icon"></span><span class="ft-name">report.html</span></li>
+            </ul>
+            <p class="ft-card-foot">Also inside: <span class="nowrap">All items.gpx</span>, <span class="nowrap">report.txt</span> and <span class="nowrap">READ-ME-FIRST.txt</span>.</p>
+          </div>
+        </div>
+        <figcaption class="compare-caption">An example with made-up names: each BaseCamp list becomes one GPX file, in
+          the same folders.</figcaption>
+      </figure>
+    </section>
+
+    <section class="band wrap" aria-labelledby="why-title">
+      <div class="band-split">
+        <div class="band-head">
+          <h2 id="why-title">Why now</h2>
+          <p>BaseCamp still works for many people today. Here is what is known about its future on the Mac.</p>
+        </div>
+        <ul class="also" role="list">
+          <li class="also-row">
+            <span class="icon icon-info" aria-hidden="true"></span>
+            <div>
+              <p class="also-title">Garmin isn’t planning new versions</p>
+              <p>In September 2026, a Garmin staff member wrote on Garmin’s forum that “no further updates or versions
+                are planned at this time.”</p>
+              <p class="source">Source: Garmin Forums, <a href="https://forums.garmin.com/apps-software/mac-windows-software/f/basecamp-mac/444467/basecamp-upgrade-for-apple-silicon" rel="noopener noreferrer">“Basecamp upgrade for Apple Silicon”</a>, 21 September 2026.</p>
+            </div>
+          </li>
+          <li class="also-row">
+            <span class="icon icon-alert" aria-hidden="true"></span>
+            <div>
+              <p class="also-title">macOS 28 stops it on Apple-silicon Macs</p>
+              <p>BaseCamp for Mac is an Intel app. Macs with Apple silicon (M1 and later) run it through Apple’s
+                Rosetta. Apple says that starting with macOS 28, Rosetta will be available only for certain older games.
+                So once one of these Macs moves to macOS 28, the next major version (expected in 2027), BaseCamp won’t
+                open on it.</p>
+              <p class="source">Source: Apple Support,
+                <a href="https://support.apple.com/en-us/102527" rel="noopener noreferrer">“Using Intel-based apps on a Mac with Apple silicon”</a>
+                (article 102527).</p>
+            </div>
+          </li>
+          <li class="also-row">
+            <span class="icon icon-check" aria-hidden="true"></span>
+            <div>
+              <p class="also-title">Intel Macs and macOS 27 keep working</p>
+              <p>On a Mac with an Intel processor, or an Apple-silicon Mac that stays on macOS 27 or earlier, BaseCamp
+                keeps running. You don’t have to rush.</p>
+            </div>
+          </li>
+          <li class="also-row">
+            <span class="icon icon-folder" aria-hidden="true"></span>
+            <div>
+              <p class="also-title">BaseCamp’s own exports lose your folders</p>
+              <p>BaseCamp can save GPX files, but GPX has no folders, so the folders and lists you built don’t come
+                along. You can export one list at a time while BaseCamp still opens, then rebuild the folders by
+                hand. Foldertrail reads the library itself, where your folders are kept.</p>
+              <p class="source">Source: posts on Garmin’s BaseCamp forums, 2012 to 2026.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="band wrap" aria-labelledby="get-title">
+      <div class="band-head">
+        <h2 id="get-title">What you get</h2>
+        <p>One ZIP file. Unzip it with a double-click, and you have:</p>
+      </div>
+      <ul class="get-list">
+        <li>
+          <h3><span class="icon icon-folder" aria-hidden="true"></span>GPX files in your folders</h3>
+          <p>One GPX file for each BaseCamp list, inside folders named like yours. Most map apps and Garmin’s own
+            tools import GPX. If an app prefers single items, you can choose one file per waypoint, track or route
+            instead.</p>
+        </li>
+        <li>
+          <h3><span class="icon icon-waypoint" aria-hidden="true"></span>A KML file with the whole tree</h3>
+          <p>One file that keeps every folder and list, for Google Earth and other apps that show KML folders. It’s
+            optional.</p>
+        </li>
+        <li>
+          <h3><span class="icon icon-file" aria-hidden="true"></span>A report</h3>
+          <p>What converted, what didn’t, and why, by name. It comes as a web page and as a text file.</p>
+        </li>
+      </ul>
+      <p class="get-note">An item that sits in several lists is written into each of those lists’ files. The guide
+        explains how to <a href="guide/#apps">load the files into Garmin Explore, Gaia GPS, CalTopo and others</a>.</p>
+    </section>
+
+    <section class="band wrap" aria-labelledby="how-title">
+      <div class="band-head">
+        <h2 id="how-title">How it works</h2>
+      </div>
+      <ol class="how-steps">
+        <li class="how-step">
+          <span class="how-num" aria-hidden="true">1</span>
+          <h3>Open your library</h3>
+          <p>Drag your library folder or a BaseCamp backup file onto the page. The guide shows where to find it.</p>
+        </li>
+        <li class="how-step">
+          <span class="how-num" aria-hidden="true">2</span>
+          <h3>Check the free preview</h3>
+          <p>See every folder and list with its waypoints, tracks and routes, and anything that won’t convert.</p>
+        </li>
+        <li class="how-step">
+          <span class="how-num" aria-hidden="true">3</span>
+          <h3>Download your files</h3>
+          <p>A license key unlocks the download. Unzip it and import the files into the apps you use.</p>
+        </li>
+      </ol>
+      <p class="how-foot">Works in current versions of Safari, Chrome and Firefox. BaseCamp doesn’t need to be
+        installed or running.</p>
+    </section>
+
+    <section class="band wrap" aria-labelledby="private-title">
+      <div class="band-split">
+        <div class="band-head">
+          <h2 id="private-title">Your library stays on your Mac</h2>
+          <p>Foldertrail is a web page that does its work inside your browser. It reads your library there and makes
+            your files there.</p>
+          <p class="band-more"><a href="privacy/">Read the privacy page</a></p>
+        </div>
+        <ul class="also" role="list">
+          <li class="also-row">
+            <span class="icon icon-lock" aria-hidden="true"></span>
+            <div>
+              <p class="also-title">Nothing is uploaded</p>
+              <p>Your waypoints, tracks, routes, notes and folder names never leave your computer.</p>
+            </div>
+          </li>
+          <li class="also-row">
+            <span class="icon icon-key" aria-hidden="true"></span>
+            <div>
+              <p class="also-title">One request, for the license</p>
+              <p>When you unlock the download, the page sends your license key and Foldertrail’s product ID to the
+                payment provider to check the key. A saved key is checked again at most once per browser session,
+                when you open the converter. It’s the only request the page makes to another site.</p>
+            </div>
+          </li>
+          <li class="also-row">
+            <span class="icon icon-stop" aria-hidden="true"></span>
+            <div>
+              <p class="also-title">No analytics, no cookies</p>
+              <p>No tracking, no ads, nothing loaded from other sites. An accepted license key is kept in your browser
+                so you don’t have to paste it again.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="band wrap" aria-labelledby="price-title">
+      <div class="band-head">
+        <h2 id="price-title">Price</h2>
+      </div>
+      <div class="price-grid">
+        <div class="price-card">
+          <div class="price-head">
+            <h3>Preview</h3>
+            <p class="price-amount">Free</p>
+          </div>
+          <ul class="price-list">
+            <li><span class="icon icon-check" aria-hidden="true"></span><span>Your whole folder and list tree, with
+              counts of waypoints, tracks and routes</span></li>
+            <li><span class="icon icon-check" aria-hidden="true"></span><span>What won’t convert, and why</span></li>
+            <li><span class="icon icon-check" aria-hidden="true"></span><span>A diagnostic report you can share if
+              you need help (it holds no names or places)</span></li>
+          </ul>
+          <div class="button-row">
+            <a class="btn btn-primary" href="app/">Try the free preview</a>
+          </div>
+        </div>
+        <div class="price-card">
+          <div class="price-head">
+            <h3>Download</h3>
+            <p class="price-amount" data-config="priceDisplay">$19<span class="price-amount-note">planned price</span></p>
+          </div>
+          <p class="price-what">One ZIP with your GPX files in their folders, the KML and the report. A license key
+            unlocks it.</p>
+          <div class="presale" id="presale">
+            <p class="presale-title"><span class="icon icon-lock" aria-hidden="true"></span>Not on sale yet</p>
+            <p>Foldertrail isn’t on sale yet, so downloading is switched off. The preview is complete and free in the
+              meantime.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band wrap" aria-labelledby="limits-title">
+      <div class="band-split">
+        <div class="band-head">
+          <h2 id="limits-title">Limits</h2>
+          <p>What Foldertrail doesn’t do, so you know before you start. The report lists anything that applies to
+            your library.</p>
+        </div>
+        <ul class="also" role="list">
+          <li class="also-row">
+            <span class="icon icon-route" aria-hidden="true"></span>
+            <div>
+              <p class="also-title">Routes are straight lines</p>
+              <p>Routes come out as straight lines between their via points. Routes that BaseCamp calculated along
+                roads aren’t converted in this version, and neither is a route whose via points can’t all be found:
+                the preview and the report list them by name.</p>
+            </div>
+          </li>
+          <li class="also-row">
+            <span class="icon icon-stop" aria-hidden="true"></span>
+            <div>
+              <p class="also-title">Some data stays behind</p>
+              <p>BirdsEye imagery, custom maps, Adventures, geocache logs and photos aren’t converted. When Foldertrail
+                finds some of these in your library, such as BirdsEye imagery, the preview and the report mention
+                them.</p>
+            </div>
+          </li>
+          <li class="also-row">
+            <span class="icon icon-track" aria-hidden="true"></span>
+            <div>
+              <p class="also-title">Track elevation and time only when they read cleanly</p>
+              <p>If they don’t, the track keeps its shape without them, and the report says so.</p>
+            </div>
+          </li>
+          <li class="also-row">
+            <span class="icon icon-info" aria-hidden="true"></span>
+            <div>
+              <p class="also-title">Still being tested</p>
+              <p>Foldertrail has been checked against real libraries made in BaseCamp 4.8.13 for Mac (with made-up content)
+                and against many made-up libraries built for testing. Yours may hold something we haven’t seen yet, so before you buy,
+                check the free preview against your library: in BaseCamp if it still opens, or as you remember it.</p>
+            </div>
+          </li>
+          <li class="also-row">
+            <span class="icon icon-info" aria-hidden="true"></span>
+            <div>
+              <p class="also-title">Made for BaseCamp on a Mac</p>
+              <p>Libraries from BaseCamp for Windows may work, but they haven’t been checked yet.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="band wrap" aria-labelledby="closing-title">
+      <div class="closing">
+        <div>
+          <h2 id="closing-title">See what Foldertrail finds in your library</h2>
+          <p>The preview is free, and your library stays on your Mac.</p>
+        </div>
+        <a class="btn btn-primary btn-large" href="app/">Try the free preview</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="app/">Converter</a>
+        <a href="guide/">Guide</a>
+        <a href="faq/">FAQ</a>
+        <a href="privacy/">Privacy</a>
+      </nav>
+      <p>Foldertrail is an independent tool, not affiliated with, endorsed by, or sponsored by Garmin Ltd. or its
+        subsidiaries. Garmin and BaseCamp are trademarks of Garmin Ltd. or its subsidiaries.</p>
+      <p class="footer-meta">Runs in your browser. Nothing is uploaded.</p>
+    </div>
+  </footer>
+</body>
+</html>

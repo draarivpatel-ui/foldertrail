@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>Foldertrail</title>
+  <!-- Master app icon. The drawing is site/assets/favicon.svg (32 units) scaled by 14.4 about the centre, so the
+       folder and the trail sit inside the central 80% circle that platforms keep when they mask an icon.
+       Only the trail's dashes differ: the favicon's 1.7/2.1 pattern nearly closes up, which reads as a line at 32 px
+       but as lumps at this size, so here the dashes are shorter with clear gaps, like the site's large trail lines.
+       Colours: #1d6a4f is the light accent token, #ffffff the light accent-ink token, #f3dcb4 the favicon's trail. -->
+  <rect width="512" height="512" rx="112" fill="#1d6a4f"/>
+  <g transform="translate(25.6 25.6) scale(14.4)">
+    <path d="M5.5 10.6c0-1.1.9-2 2-2h5.05l2.4 2.45H24.5c1.1 0 2 .9 2 2V22.9c0 1.1-.9 2-2 2h-17c-1.1 0-2-.9-2-2z" fill="none" stroke="#fff" stroke-width="2.1" stroke-linejoin="round"/>
+    <path d="M9.5 21.4c2.1-.1 2.65-3.6 5.3-3.65 2.8-.05 2.95 2.6 5.1 1.45 1.1-.6 1.45-2 2-2.85" fill="none" stroke="#f3dcb4" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="1.2 3"/>
+    <circle cx="22.7" cy="15.4" r="1.8" fill="#f3dcb4"/>
+  </g>
+</svg>

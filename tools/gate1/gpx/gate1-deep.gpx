@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="BCR Gate 1 kit (made-up test data)" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd">
+  <metadata>
+    <name>Gate1 Deep</name>
+    <desc>Made-up test data for the BCR Gate 1 check. Not a real place or trip.</desc>
+  </metadata>
+  <wpt lat="-35.2512345" lon="85.7512345">
+    <ele>3.75</ele>
+    <time>2006-07-08T09:10:11Z</time>
+    <name>Gate1 Waypoint Foxtrot</name>
+    <cmt>Gate1 comment Foxtrot</cmt>
+  </wpt>
+  <trk>
+    <name>Gate1 Twin Track</name>
+    <trkseg>
+      <trkpt lat="-35.2601234" lon="85.7601234">
+        <ele>0.5</ele>
+        <time>2005-06-07T09:00:00Z</time>
+      </trkpt>
+      <trkpt lat="-35.2602234" lon="85.7602734">
+        <ele>1.0</ele>
+        <time>2005-06-07T09:00:20Z</time>
+      </trkpt>
+      <trkpt lat="-35.2603234" lon="85.7604234">
+        <ele>1.5</ele>
+        <time>2005-06-07T09:00:40Z</time>
+      </trkpt>
+      <trkpt lat="-35.2604234" lon="85.7605734">
+        <ele>2.0</ele>
+        <time>2005-06-07T09:01:00Z</time>
+      </trkpt>
+      <trkpt lat="-35.2605234" lon="85.7607234">
+        <ele>2.5</ele>
+        <time>2005-06-07T09:01:20Z</time>
+      </trkpt>
+      <trkpt lat="-35.2606234" lon="85.7608734">
+        <ele>3.0</ele>
+        <time>2005-06-07T09:01:40Z</time>
+      </trkpt>
+      <trkpt lat="-35.2607234" lon="85.7610234">
+        <ele>3.5</ele>
+        <time>2005-06-07T09:02:00Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Gate1 Track Sensors</name>
+    <trkseg>
+      <trkpt lat="-35.2701234" lon="85.7701234">
+        <ele>5.5</ele>
+        <time>2004-05-06T07:08:09Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension>
+            <gpxtpx:atemp>20.5</gpxtpx:atemp>
+            <gpxtpx:hr>100</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+      <trkpt lat="-35.2699934" lon="85.7702534">
+        <ele>6.0</ele>
+        <time>2004-05-06T07:08:14Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension>
+            <gpxtpx:atemp>20.75</gpxtpx:atemp>
+            <gpxtpx:hr>101</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+      <trkpt lat="-35.2698634" lon="85.7703834">
+        <ele>6.5</ele>
+        <time>2004-05-06T07:08:19Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension>
+            <gpxtpx:atemp>21</gpxtpx:atemp>
+            <gpxtpx:hr>102</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+      <trkpt lat="-35.2697334" lon="85.7705134">
+        <ele>7.0</ele>
+        <time>2004-05-06T07:08:24Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension>
+            <gpxtpx:atemp>21.25</gpxtpx:atemp>
+            <gpxtpx:hr>103</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+      <trkpt lat="-35.2696034" lon="85.7706434">
+        <ele>7.5</ele>
+        <time>2004-05-06T07:08:29Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension>
+            <gpxtpx:atemp>21.5</gpxtpx:atemp>
+            <gpxtpx:hr>104</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+      <trkpt lat="-35.2694734" lon="85.7707734">
+        <ele>8.0</ele>
+        <time>2004-05-06T07:08:34Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension>
+            <gpxtpx:atemp>21.75</gpxtpx:atemp>
+            <gpxtpx:hr>105</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+      <trkpt lat="-35.2693434" lon="85.7709034">
+        <ele>8.5</ele>
+        <time>2004-05-06T07:08:39Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension>
+            <gpxtpx:atemp>22</gpxtpx:atemp>
+            <gpxtpx:hr>106</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+      <trkpt lat="-35.2692134" lon="85.7710334">
+        <ele>9.0</ele>
+        <time>2004-05-06T07:08:44Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension>
+            <gpxtpx:atemp>22.25</gpxtpx:atemp>
+            <gpxtpx:hr>107</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+      <trkpt lat="-35.2690834" lon="85.7711634">
+        <ele>9.5</ele>
+        <time>2004-05-06T07:08:49Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension>
+            <gpxtpx:atemp>22.5</gpxtpx:atemp>
+            <gpxtpx:hr>108</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

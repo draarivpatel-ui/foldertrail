@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Turn a Garmin BaseCamp library into GPX files in the same folders and lists, in your browser. Nothing is uploaded.">
+  <title>Foldertrail · Convert your BaseCamp library</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/base.css">
+  <link rel="stylesheet" href="../assets/app.css">
+  <script type="module" src="../js/app/main.js"></script>
+</head>
+<body class="page-app">
+  <a class="skip-link" href="#main">Skip to the converter</a>
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="brand" href="../">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Foldertrail</span>
+      </a>
+      <span class="brand-desc">for Garmin BaseCamp libraries</span>
+    </div>
+  </header>
+
+  <div class="shell">
+    <nav class="steps" aria-label="Steps">
+      <ol class="steps-list">
+        <li class="step" data-step="open"><span class="step-dot" aria-hidden="true"></span><span class="step-label">Choose library</span></li>
+        <li class="step" data-step="read"><span class="step-dot" aria-hidden="true"></span><span class="step-label">Read</span></li>
+        <li class="step" data-step="preview"><span class="step-dot" aria-hidden="true"></span><span class="step-label">Preview</span></li>
+        <li class="step" data-step="download"><span class="step-dot" aria-hidden="true"></span><span class="step-label">Download</span></li>
+      </ol>
+      <p class="steps-note"><span class="icon icon-lock" aria-hidden="true"></span><span>Your library stays on this computer.</span></p>
+    </nav>
+
+    <main id="main" class="main" tabindex="-1">
+
+      <div class="boot-note" id="boot-note">
+        <h1>Foldertrail could not start</h1>
+        <p>This page needs JavaScript and a current browser. Turn JavaScript on, or open the page in a current
+          version of Safari, Chrome or Firefox.</p>
+        <p>On macOS 10.13 or 10.14, Safari can’t be updated far enough: use a current Chrome or Firefox there.</p>
+      </div>
+
+      <!-- 1. Choose library -->
+      <section class="view" id="view-open" aria-labelledby="open-title" hidden>
+        <h1 id="open-title" tabindex="-1">Open your BaseCamp library</h1>
+        <p class="lead">Foldertrail reads the library in this browser and saves your waypoints, tracks and routes as
+          GPX files, in the same folders and lists you made in BaseCamp.</p>
+
+        <p class="notice notice-info phone-note"><span class="icon icon-info" aria-hidden="true"></span>
+          <span>Foldertrail works on a Mac or PC. Your library is on your computer, so open this page there, in
+            Safari, Chrome or Firefox.</span></p>
+
+        <div class="notice notice-bad" id="support-blocking" hidden>
+          <span class="icon icon-stop" aria-hidden="true"></span>
+          <div><p class="notice-title">This browser can’t run Foldertrail</p><p id="support-blocking-text"></p></div>
+        </div>
+        <div id="support-notes"></div>
+
+        <div class="notice notice-bad" id="open-errors" role="alert" hidden>
+          <span class="icon icon-alert" aria-hidden="true"></span>
+          <div><p class="notice-title">That could not be used</p><ul class="notice-list" id="open-errors-list"></ul></div>
+        </div>
+        <p class="status-line" id="open-status" role="status"></p>
+
+        <div class="dropzone" id="dropzone">
+          <svg class="dropzone-edge" aria-hidden="true" focusable="false"><rect class="dropzone-edge-rect" x="0" y="0" width="100%" height="100%" rx="14" ry="14"></rect></svg>
+          <span class="dropzone-art icon icon-drop" aria-hidden="true"></span>
+          <p class="dropzone-title">Drop your library folder or backup file here</p>
+          <p class="dropzone-sub">The library folder is named with a version number, such as <span class="mono">4.8</span>.</p>
+          <div class="dropzone-actions">
+            <button type="button" class="btn btn-primary" id="choose-folder">Choose folder…</button>
+            <button type="button" class="btn" id="choose-file">Choose backup file…</button>
+          </div>
+          <input type="file" id="folder-input" webkitdirectory multiple hidden>
+          <input type="file" id="file-input" multiple hidden>
+        </div>
+
+        <ul class="assurances">
+          <li><span class="icon icon-lock" aria-hidden="true"></span><span><strong>Nothing is uploaded.</strong>
+            The library is read by this page, on your computer.</span></li>
+          <li id="chrome-note"><span class="icon icon-info" aria-hidden="true"></span><span>If you choose a folder in
+            Chrome, it asks “Upload N files to this site?”, with N the number of files. Chrome calls this “upload”;
+            the files stay on your Mac.</span></li>
+        </ul>
+
+        <section class="where" aria-labelledby="where-title">
+          <h2 id="where-title">Where is my library?</h2>
+          <div class="where-routes">
+            <div class="where-route">
+              <h3>If BaseCamp no longer opens</h3>
+              <ol class="steps-numbered">
+                <li>In Finder, press <kbd>⌘</kbd><kbd>⇧</kbd><kbd>G</kbd> (Go to Folder) and paste this path:
+                  <span class="path-box">
+                    <code id="db-path">~/Library/Application Support/Garmin/BaseCamp/Database</code>
+                    <button type="button" class="btn btn-small" id="copy-path"><span class="icon icon-copy" aria-hidden="true"></span><span class="btn-text">Copy</span></button>
+                  </span>
+                </li>
+                <li>Drag the folder with the highest version number, such as <span class="mono">4.8</span>, onto this page.</li>
+              </ol>
+            </div>
+            <div class="where-route">
+              <h3>If BaseCamp still opens</h3>
+              <ol class="steps-numbered">
+                <li>In BaseCamp, choose File › Backup and save the backup file.</li>
+                <li>Drop the <span class="mono">.Backup</span> file here, or use Choose backup file.</li>
+              </ol>
+              <p class="fine">A backup is a single file that holds the whole library.</p>
+            </div>
+          </div>
+          <p class="fine">Keep your library somewhere else, in a <span class="mono">.bclibrary</span> package? Drag the package here.</p>
+        </section>
+      </section>
+
+      <!-- 2. Read -->
+      <section class="view" id="view-read" aria-labelledby="read-title" hidden>
+        <h1 id="read-title" tabindex="-1">Reading your library</h1>
+        <p class="lead" id="read-phase" role="status">Starting…</p>
+        <div class="progress" id="read-progress" role="progressbar" aria-labelledby="read-title" aria-valuemin="0" aria-valuemax="100">
+          <span class="progress-fill"></span>
+        </div>
+        <p class="progress-detail" id="read-detail" aria-hidden="true"></p>
+        <p class="fine">This happens in this browser tab. A large library can take a minute or two.</p>
+        <button type="button" class="btn" id="cancel-read">Cancel</button>
+      </section>
+
+      <!-- 3. Preview, and 4. Download -->
+      <section class="view" id="view-preview" aria-labelledby="preview-title" hidden>
+        <h1 id="preview-title" tabindex="-1">Here’s what Foldertrail found</h1>
+        <p class="lead" id="preview-summary"></p>
+        <p class="meta" id="preview-meta"></p>
+        <div id="preview-notices"></div>
+
+        <div class="tree-panel" id="tree-panel">
+          <div class="tree-head" id="tree-head" aria-hidden="true">
+            <span class="tree-head-name">Folders and lists</span>
+            <span class="num"><span class="icon icon-waypoint"></span>Waypoints</span>
+            <span class="num"><span class="icon icon-track"></span>Tracks</span>
+            <span class="num"><span class="icon icon-route"></span>Routes</span>
+          </div>
+          <div class="tree" id="tree" role="tree" aria-label="Folders and lists"></div>
+          <div class="tree-foot">
+            <p class="tree-foot-note" id="tree-note"></p>
+            <div class="tree-foot-actions">
+              <button type="button" class="btn btn-small btn-quiet" id="expand-all">Expand all</button>
+              <button type="button" class="btn btn-small btn-quiet" id="collapse-all">Collapse all</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="also-saved"></div>
+
+        <section class="section" id="not-converted" aria-labelledby="not-converted-title">
+          <h2 id="not-converted-title">What will not convert</h2>
+          <ul class="facts" id="not-converted-facts"></ul>
+          <div id="not-converted-items"></div>
+        </section>
+
+        <section class="section" id="reading-notes" aria-labelledby="reading-notes-title" hidden>
+          <h2 id="reading-notes-title">Notes from reading</h2>
+          <ul class="notes" id="reading-notes-list"></ul>
+        </section>
+
+        <section class="unlock" id="unlock" aria-labelledby="unlock-title">
+          <div class="unlock-head">
+            <h2 id="unlock-title">Download</h2>
+            <p class="unlock-price" id="unlock-price" hidden></p>
+          </div>
+          <p class="unlock-what">One ZIP file: a GPX file for each list, inside your folders; a report of what
+            converted; and, if you like, one KML file that keeps the whole folder tree.</p>
+
+          <div class="presale" id="presale" hidden>
+            <p class="presale-title"><span class="icon icon-lock" aria-hidden="true"></span>Preview only — not on sale yet</p>
+            <p>Foldertrail isn’t on sale yet, so downloading is switched off. The preview above is complete and free.</p>
+          </div>
+
+          <ol class="unlock-steps" id="licence-steps" hidden>
+            <li class="unlock-step" id="buy-step">
+              <span class="unlock-step-num" aria-hidden="true">1</span>
+              <div class="unlock-step-body">
+                <a class="btn" id="buy-link" href="#" target="_blank" rel="noopener noreferrer">Buy a license<span class="icon icon-external" aria-hidden="true"></span></a>
+                <p class="fine" id="buy-note"></p>
+              </div>
+            </li>
+            <li class="unlock-step">
+              <span class="unlock-step-num" aria-hidden="true">2</span>
+              <div class="unlock-step-body">
+                <form class="key-form" id="key-form" novalidate>
+                  <label class="field-label" id="licence-key-label" for="licence-key">Paste your license key</label>
+                  <div class="key-row" id="key-row">
+                    <input class="field mono" id="licence-key" name="licence-key" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="200" aria-describedby="licence-message licence-privacy">
+                    <button type="submit" class="btn" id="unlock-btn">Unlock</button>
+                  </div>
+                  <p class="licence-message" id="licence-message" role="status"></p>
+                  <p class="licence-saved" id="licence-saved" hidden><span id="licence-saved-text">A license key is saved in this browser.</span>
+                    <button type="button" class="link-button" id="forget-licence">Remove it</button></p>
+                </form>
+                <p class="fine" id="licence-privacy"></p>
+              </div>
+            </li>
+          </ol>
+
+          <fieldset class="options" id="options">
+            <legend class="field-label">What to include</legend>
+            <div class="check">
+              <input type="checkbox" id="opt-kml" checked aria-describedby="opt-kml-sub">
+              <label class="check-title" for="opt-kml">A KML file with all your folders</label>
+              <span class="check-sub" id="opt-kml-sub">For Google Earth and other apps that keep folders.</span>
+            </div>
+            <div class="check">
+              <input type="checkbox" id="opt-per-item" aria-describedby="opt-per-item-sub">
+              <label class="check-title" for="opt-per-item">One GPX file per item</label>
+              <span class="check-sub" id="opt-per-item-sub">Instead of one file per list. Some apps import single items more easily.</span>
+            </div>
+          </fieldset>
+
+          <div class="download-row">
+            <button type="button" class="btn btn-primary btn-large" id="download-btn" disabled><span class="icon icon-download" aria-hidden="true"></span>Download ZIP</button>
+            <div class="export-progress" id="export-progress" hidden>
+              <p class="export-phase" id="export-phase" role="status"></p>
+              <div class="progress progress-small" id="export-bar" role="progressbar" aria-labelledby="export-phase" aria-valuemin="0" aria-valuemax="100"><span class="progress-fill"></span></div>
+              <button type="button" class="btn btn-small" id="cancel-export">Cancel</button>
+            </div>
+          </div>
+          <p class="fine download-hint" id="download-hint" hidden></p>
+          <div class="notice notice-bad" id="export-error" role="alert" hidden>
+            <span class="icon icon-alert" aria-hidden="true"></span><p id="export-error-text"></p>
+          </div>
+        </section>
+      </section>
+
+      <!-- 5. Done -->
+      <section class="view" id="view-done" aria-labelledby="done-title" hidden>
+        <h1 id="done-title" tabindex="-1"><span class="done-check" aria-hidden="true"><span class="icon icon-check"></span></span>Your files are ready</h1>
+        <p class="lead" id="done-summary"></p>
+        <div class="button-row">
+          <a class="btn btn-primary" id="download-again" href="#" download><span class="icon icon-download" aria-hidden="true"></span>Download again</a>
+          <button type="button" class="btn" id="start-over">Convert another library</button>
+        </div>
+        <section class="section" aria-labelledby="next-title">
+          <h2 id="next-title">Next</h2>
+          <ol class="steps-numbered next-steps" id="next-steps">
+            <li>Unzip the file (double-click it in Finder).</li>
+            <li>Import the GPX files into any app that reads GPX, such as Gaia GPS, CalTopo or OsmAnd.</li>
+          </ol>
+        </section>
+        <section class="section" aria-labelledby="report-title">
+          <h2 id="report-title">Report</h2>
+          <p class="fine">The same report is in the ZIP file.</p>
+          <pre class="report" id="report-text" tabindex="0" aria-labelledby="report-title"></pre>
+        </section>
+      </section>
+
+      <!-- Something went wrong -->
+      <section class="view" id="view-error" aria-labelledby="error-title" hidden>
+        <h1 id="error-title" tabindex="-1">That didn’t work</h1>
+        <p class="lead" id="error-message"></p>
+        <p class="error-help">Check that you chose your BaseCamp library: the folder named with a version number, such
+          as <span class="mono">4.8</span>, or a <span class="mono">.Backup</span> file made in BaseCamp.</p>
+        <div class="button-row">
+          <button type="button" class="btn btn-primary" id="error-retry">Try again</button>
+        </div>
+      </section>
+
+      <!-- Diagnostic report: shown with the preview, the result and errors, whenever there is one -->
+      <section class="section diagnostic" id="diagnostic" aria-labelledby="diagnostic-title" hidden>
+        <h2 id="diagnostic-title">Diagnostic report</h2>
+        <p>If something looks wrong, this report helps find out why. It describes only the structure of the library
+          files: sizes, counts, lengths and version numbers. It holds no names, notes, places, coordinates, times or
+          file paths. Nothing is sent: you copy it, read it, and decide whether to share it.</p>
+        <p class="fine" id="support-contact" hidden></p>
+        <div class="button-row">
+          <button type="button" class="btn" id="copy-dump"><span class="icon icon-copy" aria-hidden="true"></span>Copy diagnostic report</button>
+          <button type="button" class="btn btn-quiet" id="toggle-dump" aria-expanded="false" aria-controls="dump-text">Show it</button>
+          <span class="status-inline" id="copy-dump-status" role="status"></span>
+        </div>
+        <pre class="dump" id="dump-text" tabindex="0" aria-labelledby="diagnostic-title" hidden></pre>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="./" aria-current="page">Converter</a>
+        <a href="../guide/">Guide</a>
+        <a href="../faq/">FAQ</a>
+        <a href="../privacy/">Privacy</a>
+      </nav>
+      <p>Foldertrail is an independent tool, not affiliated with, endorsed by, or sponsored by Garmin Ltd. or its
+        subsidiaries. Garmin and BaseCamp are trademarks of Garmin Ltd. or its subsidiaries.</p>
+      <p class="footer-meta" id="footer-meta">Runs in your browser. Nothing is uploaded.</p>
+    </div>
+  </footer>
+</body>
+</html>

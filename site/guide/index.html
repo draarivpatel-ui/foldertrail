@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Find your BaseCamp library on a Mac, convert it to GPX with its folders kept, and load the files into Garmin Explore, a device, Gaia GPS, CalTopo or Google Earth.">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Foldertrail">
+  <meta property="og:title" content="Guide: move your BaseCamp library to GPX, folders kept">
+  <meta property="og:description" content="Find your BaseCamp library on a Mac, convert it in your browser, and load the GPX files into the apps you use.">
+  <title>Foldertrail · Guide: move your BaseCamp library to GPX</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/base.css">
+  <link rel="stylesheet" href="../assets/app.css">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body class="page-guide">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="masthead">
+    <div class="masthead-inner site-masthead">
+      <a class="brand" href="../">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Foldertrail</span>
+      </a>
+      <span class="brand-desc">for Garmin BaseCamp libraries</span>
+      <nav class="site-nav" aria-label="Site">
+        <ul class="site-nav-list">
+          <li><a href="./" aria-current="page">Guide</a></li>
+          <li><a href="../faq/">FAQ</a></li>
+          <li><a href="../privacy/">Privacy</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-small site-cta" href="../app/">Open the converter</a>
+    </div>
+  </header>
+
+  <div class="shell">
+    <nav class="toc" aria-label="On this page">
+      <ol class="toc-list toc-numbered">
+        <li><a href="#start">Before you start</a></li>
+        <li><a href="#copy">Make a safety copy</a></li>
+        <li><a href="#find">Find your library</a></li>
+        <li><a href="#open">Open it in Foldertrail</a></li>
+        <li><a href="#preview">Check the preview</a></li>
+        <li><a href="#download">What’s in the download</a></li>
+        <li><a href="#apps">Load the files into other apps</a></li>
+      </ol>
+      <p class="toc-note"><span class="icon icon-info" aria-hidden="true"></span><span>Every outside fact here names
+        its source. <a href="#sources">Sources</a></span></p>
+    </nav>
+
+    <main id="main" class="main prose" tabindex="-1">
+      <h1>Move your BaseCamp library to GPX</h1>
+      <p class="lead">This guide takes you from a BaseCamp library on your Mac to GPX files in the same folders, and
+        then into the apps you use.</p>
+
+      <h2 id="start"><span class="h-num">1<span class="visually-hidden">. </span></span>Before you start</h2>
+      <ul>
+        <li>Use the Mac that holds your BaseCamp library, with a current version of Safari, Chrome or Firefox.</li>
+        <li>BaseCamp doesn’t need to open. Foldertrail reads the library files themselves.</li>
+        <li>Foldertrail only reads your library. It never changes it, and it never uploads it.</li>
+      </ul>
+      <div class="notice notice-warn">
+        <span class="icon icon-alert" aria-hidden="true"></span>
+        <div>
+          <p class="notice-title">Don’t delete your library</p>
+          <p>If BaseCamp stops opening after a macOS update, your library is still on your Mac. Keep it: it’s what
+            Foldertrail reads.</p>
+        </div>
+      </div>
+
+      <h2 id="copy"><span class="h-num">2<span class="visually-hidden">. </span></span>Make a safety copy</h2>
+      <p>Before you do anything else, keep a copy of your library somewhere safe, such as an external drive.</p>
+      <div class="where-routes">
+        <div class="where-route">
+          <h3>If BaseCamp still opens</h3>
+          <ol class="steps-numbered">
+            <li>In BaseCamp, choose File › Backup.</li>
+            <li>Save the backup file. It ends in <span class="mono">.Backup</span>.</li>
+          </ol>
+          <p class="fine">BaseCamp’s manual says a backup holds all your data, lists and folders in one file. You can
+            drop that file straight into Foldertrail.</p>
+        </div>
+        <div class="where-route">
+          <h3>If BaseCamp no longer opens</h3>
+          <ol class="steps-numbered">
+            <li>Find your library folder (step 3 shows where).</li>
+            <li>In Finder, copy the whole <span class="mono">Database</span> folder to an external drive or another
+              folder, with BaseCamp closed.</li>
+          </ol>
+        </div>
+      </div>
+
+      <h2 id="find"><span class="h-num">3<span class="visually-hidden">. </span></span>Find your library</h2>
+      <p>BaseCamp for Mac keeps its library in a folder inside your user Library:</p>
+      <ol class="steps-numbered">
+        <li>In Finder, choose Go › Go to Folder, or press <kbd>⌘</kbd><kbd>⇧</kbd><kbd>G</kbd>.</li>
+        <li>Type or paste this path, then press Return:
+          <span class="path-box"><code>~/Library/Application Support/Garmin/BaseCamp/Database</code></span>
+        </li>
+        <li>Inside are one or more folders named with a version number, such as <span class="mono">4.8</span>. The
+          one with the highest number is your current library.</li>
+      </ol>
+      <p>Finder hides your Library folder, but Go to Folder still opens it.</p>
+      <h3>If you moved your library</h3>
+      <p>A library you created yourself is a package that ends in <span class="mono">.bclibrary</span>. While
+        BaseCamp still opens, BaseCamp › Preferences › Advanced › Library shows where it is. You can drag the package
+        into Foldertrail as it is.</p>
+
+      <h2 id="open"><span class="h-num">4<span class="visually-hidden">. </span></span>Open it in Foldertrail</h2>
+      <ol class="steps-numbered">
+        <li>Open <a href="../app/">the converter</a> in Safari, Chrome or Firefox.</li>
+        <li>Drag the version folder (such as <span class="mono">4.8</span>) or your <span class="mono">.Backup</span>
+          file onto the page. You can also use Choose folder or Choose backup file.</li>
+        <li>Wait while it reads. A large library can take a minute or two.</li>
+      </ol>
+      <div class="notice notice-info">
+        <span class="icon icon-info" aria-hidden="true"></span>
+        <div>
+          <p class="notice-title">Chrome says “Upload”</p>
+          <p>If you choose a folder in Chrome, it asks “Upload N files to this site?”. That is Chrome’s wording for
+            letting the page read the files. They stay on your Mac.</p>
+        </div>
+      </div>
+
+      <h2 id="preview"><span class="h-num">5<span class="visually-hidden">. </span></span>Check the preview</h2>
+      <p>The preview is free. It shows:</p>
+      <ul>
+        <li>every folder and list, with how many waypoints, tracks and routes each holds;</li>
+        <li>what won’t convert, and why;</li>
+        <li>notes from reading, such as track details that couldn’t be read.</li>
+      </ul>
+      <p>If something looks wrong, the page offers a diagnostic report. It describes only the structure of the
+        library files (sizes, counts and version numbers) and holds no names, notes, places, coordinates, times or
+        file paths. Foldertrail never sends it: you copy it and decide whether to share it.</p>
+
+      <h2 id="download"><span class="h-num">6<span class="visually-hidden">. </span></span>What’s in the download</h2>
+      <p>One ZIP file named like <span class="mono">Foldertrail export 2026-10-06.zip</span>, with the date you made
+        it. Double-click it in Finder to unzip it. Inside:</p>
+      <dl class="file-list">
+        <div class="file-item">
+          <dt>GPX/My Collection/…/&lt;list&gt;.gpx</dt>
+          <dd>One GPX file for each list, inside folders named like yours.</dd>
+        </div>
+        <div class="file-item">
+          <dt>GPX/All items.gpx</dt>
+          <dd>Everything that converted, in one file.</dd>
+        </div>
+        <div class="file-item">
+          <dt>GPX/Not in any list.gpx</dt>
+          <dd>Items that were in no list, if there are any.</dd>
+        </div>
+        <div class="file-item">
+          <dt>GPX/_Duplicate names/</dt>
+          <dd>Items whose list couldn’t be decided because another item of the same kind has the same name, if there
+            are any. Foldertrail doesn’t guess: the report names the lists that refer to them.</dd>
+        </div>
+        <div class="file-item">
+          <dt>KML/My Collection.kml</dt>
+          <dd>Your whole tree in one file, if you chose the KML option.</dd>
+        </div>
+        <div class="file-item">
+          <dt>report.html, report.txt</dt>
+          <dd>What converted, what didn’t, and why.</dd>
+        </div>
+        <div class="file-item">
+          <dt>READ-ME-FIRST.txt</dt>
+          <dd>A short note on what each file is.</dd>
+        </div>
+      </dl>
+      <p>An item that was in several lists is in each of those lists’ files. To avoid copies, import one list at a
+        time, or <span class="mono">All items.gpx</span> once.</p>
+      <p>If you choose “One GPX file per item” before downloading, each list becomes a folder holding one GPX file
+        per waypoint, track or route.</p>
+
+      <h2 id="apps"><span class="h-num">7<span class="visually-hidden">. </span></span>Load the files into other apps</h2>
+      <p>GPX files hold waypoints, tracks and routes, but no folders. The folders are the ones on your Mac, so each
+        app below shows your data in its own way. Steps are taken from each maker’s help pages, listed under
+        <a href="#sources">Sources</a>. Apps change, so check their current help if a step doesn’t match.</p>
+
+      <h3 id="explore">Garmin Explore</h3>
+      <p>Garmin’s own manuals describe this route for BaseCamp data: export it, then import it on the Explore
+        website. On explore.garmin.com, open the map, click Import, and follow the steps to add the files to a
+        collection. Explore accepts GPX, KML and KMZ files.</p>
+      <p>Garmin’s help doesn’t describe collections inside collections, so your deeper folder levels won’t carry
+        over. Importing one list’s GPX file at a time, into a collection with the same name, keeps things easy to
+        find. Then sync your device as its manual describes.</p>
+
+      <h3 id="device">A Garmin device, over USB</h3>
+      <p>Garmin’s manuals describe copying files to a device over USB, and the steps differ by model. Two
+        examples:</p>
+      <ul>
+        <li>The Tread manual says to copy GPX files into the GPX folder on the device, and that a Mac may need extra
+          software, such as Android File Transfer, to read and write files on it.</li>
+        <li>The GPSMAP 67 manual says macOS doesn’t detect that device by default, and that you must use Garmin
+          Express to work with files on it.</li>
+      </ul>
+      <p>Look up “Transferring files” in your own device’s manual.</p>
+
+      <h3 id="connect">Garmin Connect</h3>
+      <p>We couldn’t find Garmin’s own instructions for importing a GPX file into Garmin Connect, so this guide
+        doesn’t give steps for it.</p>
+      <p class="unverified">Not checked by us: Garmin forum users describe importing a GPX file as a course from the
+        Courses page of the Connect website.</p>
+
+      <h3 id="gaia">Gaia GPS</h3>
+      <p>On gaiagps.com/map, click Import Data on the right-hand toolbar, or drag files onto the map, then click Save
+        Item. Gaia puts each imported file in its own folder, named after the file, so importing list by list gives
+        you one folder per list. Gaia accepts up to 1,000 features, such as waypoints and tracks, per file.</p>
+
+      <h3 id="caltopo">CalTopo</h3>
+      <p>Click Import at the top of the Map Objects side bar and choose a file. CalTopo accepts GPX and KML, but it
+        sorts what it imports into its own folders: markers in one, lines in another. Your folders aren’t kept
+        there. CalTopo keeps folders only from GeoJSON files, which Foldertrail doesn’t write yet.</p>
+
+      <h3 id="google-earth">Google Earth</h3>
+      <p>Use the KML file: it holds your whole folder tree. In Google Earth on the web, click Open local KML editor on
+        the home screen, then Open KML from device, and choose the file. To add it to a Google Earth project instead,
+        choose Import file to project, then Upload from device. Projects are kept in your Google Drive, and one import
+        holds up to 10,000 features.</p>
+
+      <h3 id="other-apps">Other apps</h3>
+      <p>Most map apps import GPX files. Look for Import or Open in the app.</p>
+
+      <h2 id="sources">Sources</h2>
+      <p>Checked on 6 October 2026. Each address is a link to the source, on its own site.</p>
+      <ol class="sources">
+        <li>Garmin Forums, “Basecamp upgrade for Apple Silicon” (Garmin staff reply, 21 September 2026).
+          <a class="source-url" href="https://forums.garmin.com/apps-software/mac-windows-software/f/basecamp-mac/444467/basecamp-upgrade-for-apple-silicon" rel="noopener noreferrer">forums.garmin.com/apps-software/mac-windows-software/f/basecamp-mac/444467/basecamp-upgrade-for-apple-silicon</a></li>
+        <li>Apple Support, “Using Intel-based apps on a Mac with Apple silicon” (article 102527).
+          <a class="source-url" href="https://support.apple.com/en-us/102527" rel="noopener noreferrer">support.apple.com/en-us/102527</a></li>
+        <li>Garmin, BaseCamp for Mac 4.8.13 download page (Intel Macs only).
+          <a class="source-url" href="https://www8.garmin.com/support/download_details.jsp?id=4450" rel="noopener noreferrer">www8.garmin.com/support/download_details.jsp?id=4450</a></li>
+        <li>Garmin Forums, BaseCamp for Mac thread 71738 (replies note that GPX has no folders or lists; one of several such threads).
+          <a class="source-url" href="https://forums.garmin.com/apps-software/mac-windows-software/f/basecamp-mac/71738/multiple-database-in-basecamp" rel="noopener noreferrer">forums.garmin.com/apps-software/mac-windows-software/f/basecamp-mac/71738/multiple-database-in-basecamp</a></li>
+        <li>Garmin, BaseCamp for Mac manual (File › Backup; Preferences › Advanced › Library).
+          <a class="source-url" href="https://www8.garmin.com/manuals/webhelp/basecampmac/EN-US/BaseCamp_Help_-_Mac_EN-US.pdf" rel="noopener noreferrer">www8.garmin.com/manuals/webhelp/basecampmac/EN-US/BaseCamp_Help_-_Mac_EN-US.pdf</a></li>
+        <li>Apple Support, “Go directly to a specific folder on Mac”.
+          <a class="source-url" href="https://support.apple.com/guide/mac-help/go-directly-to-a-specific-folder-on-mac-mchlp1236/mac" rel="noopener noreferrer">support.apple.com/guide/mac-help/go-directly-to-a-specific-folder-on-mac-mchlp1236/mac</a></li>
+        <li>Garmin, Tread SXS Edition manual, “Adding BaseCamp Data to Garmin Explore” (December 2025).
+          <a class="source-url" href="https://www8.garmin.com/manuals/webhelp/GUID-F0AC3576-CD83-465E-983D-7AD585ADB59E/EN-US/GUID-BF0DCAAD-2DC1-4B7E-A116-E22E2BBB4E18.html" rel="noopener noreferrer">www8.garmin.com/manuals/webhelp/GUID-F0AC3576-CD83-465E-983D-7AD585ADB59E/EN-US/GUID-BF0DCAAD-2DC1-4B7E-A116-E22E2BBB4E18.html</a></li>
+        <li>Garmin Explore Web Help, “Importing Map Data”.
+          <a class="source-url" href="https://www8.garmin.com/manuals/webhelp/explorewebsitepro/EN-US/GUID-5F906255-6086-4CD6-9D8F-A038C01C2FB9.html" rel="noopener noreferrer">www8.garmin.com/manuals/webhelp/explorewebsitepro/EN-US/GUID-5F906255-6086-4CD6-9D8F-A038C01C2FB9.html</a></li>
+        <li>Garmin, Tread Owner’s Manual, “Transferring GPX Files From Your Computer”.
+          <a class="source-url" href="https://www8.garmin.com/manuals/webhelp/GUID-700B8BF2-F8BB-42A2-A617-3CC00CB4CCA0/EN-US/GUID-CACE2D6E-A614-4AB9-9924-35BAFDE21913.html" rel="noopener noreferrer">www8.garmin.com/manuals/webhelp/GUID-700B8BF2-F8BB-42A2-A617-3CC00CB4CCA0/EN-US/GUID-CACE2D6E-A614-4AB9-9924-35BAFDE21913.html</a></li>
+        <li>Garmin, GPSMAP 67 Owner’s Manual, “Transferring Files to Your Device”.
+          <a class="source-url" href="https://www8.garmin.com/manuals/webhelp/GUID-5724F4C0-7557-4C51-BF07-54A567FA4600/EN-US/GUID-7E9B2540-FC7A-4233-97E3-8703987AD8E5.html" rel="noopener noreferrer">www8.garmin.com/manuals/webhelp/GUID-5724F4C0-7557-4C51-BF07-54A567FA4600/EN-US/GUID-7E9B2540-FC7A-4233-97E3-8703987AD8E5.html</a></li>
+        <li>Gaia GPS Help, “Import GPX, KML, KMZ, GeoJSON, or FIT Files on gaiagps.com” (updated 11 August 2026).
+          <a class="source-url" href="https://help.gaiagps.com/hc/en-us/articles/360052763513" rel="noopener noreferrer">help.gaiagps.com/hc/en-us/articles/360052763513</a></li>
+        <li>CalTopo Training, “Import”.
+          <a class="source-url" href="https://training.caltopo.com/all_users/import-export/import" rel="noopener noreferrer">training.caltopo.com/all_users/import-export/import</a></li>
+        <li>Google Earth Help, “Import KML into an Earth project or a local KML file”.
+          <a class="source-url" href="https://support.google.com/earth/answer/7365595" rel="noopener noreferrer">support.google.com/earth/answer/7365595</a></li>
+      </ol>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="../app/">Converter</a>
+        <a href="./">Guide</a>
+        <a href="../faq/">FAQ</a>
+        <a href="../privacy/">Privacy</a>
+      </nav>
+      <p>Foldertrail is an independent tool, not affiliated with, endorsed by, or sponsored by Garmin Ltd. or its
+        subsidiaries. Garmin and BaseCamp are trademarks of Garmin Ltd. or its subsidiaries.</p>
+      <p class="footer-meta">Runs in your browser. Nothing is uploaded.</p>
+    </div>
+  </footer>
+</body>
+</html>

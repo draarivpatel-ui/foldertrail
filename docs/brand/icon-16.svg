@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <title>Foldertrail</title>
+  <!-- 16 px icon: at this size a dashed trail turns to grey noise, so it keeps the folder and the end of the trail
+       (one dot) only. The folder's straight edges sit on whole pixels (stroke 2) so it stays sharp on a 1x screen.
+       Same colours as site/assets/favicon.svg. -->
+  <rect width="16" height="16" rx="3.5" fill="#1d6a4f"/>
+  <path d="M3 5c0-.55.45-1 1-1h2.2l1.5 2H12c.55 0 1 .45 1 1V12c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1z" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="9.5" cy="9.5" r="1.5" fill="#f3dcb4"/>
+</svg>

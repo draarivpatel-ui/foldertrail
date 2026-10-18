@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="What happens to your files in Foldertrail: your BaseCamp library is read in your browser and never uploaded. The only request to another site is the license check.">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Foldertrail">
+  <meta property="og:title" content="Foldertrail privacy: your library never leaves your computer">
+  <meta property="og:description" content="Your BaseCamp library is read in your browser and never uploaded. No analytics, no cookies.">
+  <title>Foldertrail · Privacy</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/base.css">
+  <link rel="stylesheet" href="../assets/app.css">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body class="page-privacy">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="masthead">
+    <div class="masthead-inner site-masthead">
+      <a class="brand" href="../">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Foldertrail</span>
+      </a>
+      <span class="brand-desc">for Garmin BaseCamp libraries</span>
+      <nav class="site-nav" aria-label="Site">
+        <ul class="site-nav-list">
+          <li><a href="../guide/">Guide</a></li>
+          <li><a href="../faq/">FAQ</a></li>
+          <li><a href="./" aria-current="page">Privacy</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-small site-cta" href="../app/">Open the converter</a>
+    </div>
+  </header>
+
+  <div class="shell">
+    <nav class="toc" aria-label="On this page">
+      <ol class="toc-list">
+        <li><a href="#reads">What Foldertrail reads</a></li>
+        <li><a href="#sent">What is sent, and to whom</a></li>
+        <li><a href="#stored">What is stored</a></li>
+        <li><a href="#host">What the web host sees</a></li>
+        <li><a href="#diagnostic">The diagnostic report</a></li>
+        <li><a href="#policy">An extra safety layer</a></li>
+      </ol>
+    </nav>
+
+    <main id="main" class="main prose" tabindex="-1">
+      <h1>Privacy</h1>
+      <p class="lead">Foldertrail reads your BaseCamp library inside your browser, on your computer. Your library is
+        never uploaded.</p>
+
+      <ul class="also" role="list" aria-label="The short version">
+        <li class="also-row">
+          <span class="icon icon-lock" aria-hidden="true"></span>
+          <div>
+            <p class="also-title">Uploaded</p>
+            <p>Nothing. Not your library, not the files Foldertrail makes.</p>
+          </div>
+        </li>
+        <li class="also-row">
+          <span class="icon icon-key" aria-hidden="true"></span>
+          <div>
+            <p class="also-title">Sent to another site</p>
+            <p>Only for the license: your license key and Foldertrail’s product ID, to the payment provider, when
+              you unlock the download, and to re-check a saved key at most once per browser session.</p>
+          </div>
+        </li>
+        <li class="also-row">
+          <span class="icon icon-file" aria-hidden="true"></span>
+          <div>
+            <p class="also-title">Kept in your browser</p>
+            <p>A license key the payment provider accepted, so you don’t have to paste it again.</p>
+          </div>
+        </li>
+        <li class="also-row">
+          <span class="icon icon-stop" aria-hidden="true"></span>
+          <div>
+            <p class="also-title">Analytics, cookies, ads</p>
+            <p>None.</p>
+          </div>
+        </li>
+      </ul>
+
+      <h2 id="reads">What Foldertrail reads</h2>
+      <p>Only the files you give it: your library folder, a BaseCamp backup file, or a library package. It reads them
+        in the browser tab, on your computer, and makes your download there too.</p>
+      <p>The waypoints, tracks, routes, names and notes in your library are never sent anywhere. Foldertrail only
+        reads your library; it never changes it.</p>
+
+      <h2 id="sent">What is sent, and to whom</h2>
+      <p>One thing: your license key and Foldertrail’s public product ID, sent to the payment provider (Polar or
+        Gumroad) so it can say whether the key is valid. That happens when you unlock the download, and again at
+        most once per browser session when you open the converter with a key saved in your browser, so that a
+        refunded key stops working. Nothing from your library goes with it.</p>
+      <p>The check sends no cookies. Like any request on the internet, it also carries your IP address and the
+        address of this site. The payment provider’s own privacy policy covers that check, and the checkout page if
+        you buy: buying happens on the provider’s site, not this one.</p>
+
+      <h2 id="stored">What is stored in your browser</h2>
+      <p>If the payment provider accepts your key, Foldertrail keeps the key in your browser’s local storage, so you
+        don’t have to paste it again. For the current browser session only, it also notes that the key was already
+        checked. Nothing else is stored: not your library, not your email address.</p>
+      <p>To remove the key, clear this site’s data in your browser’s settings, or choose Remove it where the converter
+        says a license key is saved. Foldertrail sets no cookies.</p>
+
+      <h2 id="host">What the web host sees</h2>
+      <p>A hosting company serves these pages. Like any website, its servers see ordinary request information, such
+        as your IP address and which pages and files your browser loaded. Foldertrail adds no analytics, tracking or
+        ads on top of that, and loads nothing from other sites.</p>
+
+      <h2 id="diagnostic">The diagnostic report</h2>
+      <p>If something looks wrong, the converter offers a diagnostic report. It describes only the structure of the
+        library files: sizes, counts, lengths and version numbers. It holds no names, notes, places, coordinates,
+        times or file paths.</p>
+      <p>Foldertrail never sends it. You can copy it, read it, and decide whether to share it.</p>
+
+      <h2 id="policy">An extra safety layer</h2>
+      <p>Every page is served with a strict Content Security Policy. It tells your browser not to load code from
+        other sites, and not to connect to any site except the payment providers’ license checks.</p>
+      <p>It is a second layer behind the code itself, not a promise you can check from the page. What keeps your
+        library on your computer is that Foldertrail’s code never sends it.</p>
+
+      <p class="updated">Last updated 6 October 2026.</p>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="../app/">Converter</a>
+        <a href="../guide/">Guide</a>
+        <a href="../faq/">FAQ</a>
+        <a href="./">Privacy</a>
+      </nav>
+      <p>Foldertrail is an independent tool, not affiliated with, endorsed by, or sponsored by Garmin Ltd. or its
+        subsidiaries. Garmin and BaseCamp are trademarks of Garmin Ltd. or its subsidiaries.</p>
+      <p class="footer-meta">Runs in your browser. Nothing is uploaded.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,27 @@
+# HTTP response headers for every file the site serves (decision B22, docs/ARCHITECTURE.md section 10).
+# Cloudflare Pages, Cloudflare Workers static assets and Netlify read this file from the folder they publish
+# (dist/, made by tools/build.js) and do not serve it. tools/serve.js applies it locally.
+#
+# Rules for editing (test/headers.test.js checks them):
+# - The Content-Security-Policy must be a response header on EVERY path, the module worker
+#   (/js/app/worker.js) included: a worker takes its policy from its own response, not from the page.
+# - Cloudflare and Netlify JOIN a header with a comma when two matching rules both set it. So each header name
+#   appears in exactly one rule here; a second CSP or Cache-Control rule would silently merge into nonsense.
+# - Every line must stay under 2,000 characters (Cloudflare's limit).
+#
+# Cache: file names carry no content hash (there is no bundler), so nothing may be cached long, or a fix to
+# worker.js would not reach people for days. "max-age=0, must-revalidate" makes the browser ask every time; the
+# host answers "not modified" from the file's ETag, which is cheap. It matches the hosts' own default.
+#
+# Permissions-Policy turns off device features the app never needs. The clipboard is left alone: the page has a
+# "Copy" button for the BaseCamp folder path.
+
+/*
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; child-src 'self'; frame-src 'none'; worker-src 'self'; connect-src https://api.polar.sh/v1/customer-portal/license-keys/validate https://api.gumroad.com/v2/licenses/verify; form-action 'none'; base-uri 'none'; frame-ancestors 'none'
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  Permissions-Policy: accelerometer=(), bluetooth=(), browsing-topics=(), camera=(), display-capture=(), geolocation=(), gyroscope=(), hid=(), magnetometer=(), microphone=(), midi=(), payment=(), serial=(), usb=(), xr-spatial-tracking=()
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  X-Frame-Options: DENY
+  Cache-Control: public, max-age=0, must-revalidate

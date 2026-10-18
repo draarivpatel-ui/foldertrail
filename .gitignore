@@ -1,0 +1,6 @@
+node_modules/
+.DS_Store
+*.local.md
+scratch/
+dist/
+tools/gate1/check.html

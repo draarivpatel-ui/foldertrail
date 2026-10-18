@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src '__SCRIPT_HASH__'; style-src '__STYLE_HASH__'; connect-src 'none'; img-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Gate 1 check</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f6f5f1;
+  --panel: #ffffff;
+  --ink: #1d1d1b;
+  --muted: #5d5c57;
+  --line: #d9d6cc;
+  --accent: #1f5f8b;
+  --ok: #1e6b3a;
+  --bad: #a3261b;
+  --drop: #eef3f7;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161615;
+    --panel: #1f1f1d;
+    --ink: #ecebe6;
+    --muted: #a8a69e;
+    --line: #3a3935;
+    --accent: #7db4dc;
+    --ok: #7bc796;
+    --bad: #f08a7e;
+    --drop: #1c2630;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+main { max-width: 760px; margin: 0 auto; padding: 32px 16px 48px; }
+h1 { font-size: 1.6rem; margin: 0 0 4px; }
+.lead { color: var(--muted); margin: 0 0 20px; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; margin: 0 0 16px; }
+.status-line { margin: 0; font-weight: 600; }
+.status-line[data-state="passed"], .status-line[data-state="done"] { color: var(--ok); }
+.status-line[data-state="failed"], .status-line[data-state="error"] { color: var(--bad); }
+.small { font-size: 0.9rem; color: var(--muted); margin: 6px 0 0; }
+ol { margin: 0; padding-left: 1.3em; }
+li { margin: 4px 0; }
+code { font: 0.92em ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--drop); padding: 1px 4px; border-radius: 4px; overflow-wrap: anywhere; }
+#drop {
+  border: 2px dashed var(--accent);
+  background: var(--drop);
+  border-radius: 12px;
+  padding: 28px 16px;
+  text-align: center;
+  margin: 0 0 16px;
+}
+#drop.over { border-style: solid; }
+#drop[aria-busy="true"] { opacity: 0.7; }
+#drop p { margin: 0 0 12px; font-size: 1.1rem; font-weight: 600; }
+.buttons { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.button, button {
+  display: inline-block;
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 7px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: var(--panel);
+  color: var(--accent);
+  cursor: pointer;
+}
+button:disabled { opacity: 0.45; cursor: default; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.visually-hidden:focus + label { outline: 2px solid var(--accent); outline-offset: 2px; }
+#report {
+  width: 100%;
+  min-height: 320px;
+  font: 12.5px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  resize: vertical;
+}
+.report-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 0; }
+footer { color: var(--muted); font-size: 0.85rem; margin-top: 28px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Gate 1 check</h1>
+  <p class="lead">Reads a BaseCamp library that holds only the made-up test content, on this computer, and prints a report with no names, places or times in it.</p>
+
+  <section class="panel" aria-label="Self-test">
+    <p id="selftest" class="status-line" data-state="idle">Self-test: not started.</p>
+    <p id="features" class="small"></p>
+  </section>
+
+  <section class="panel" aria-label="What to do">
+    <ol>
+      <li>Quit BaseCamp first (BaseCamp menu, then Quit BaseCamp).</li>
+      <li>In Finder press <strong>Command-Shift-G</strong>, paste <code>~/Library/Application Support/Garmin/BaseCamp/Database</code>, and press Return.</li>
+      <li>Drag the folder named <strong>4.8</strong> onto the box below. If nothing happens, drag the <strong>.Backup</strong> file instead.</li>
+      <li>Press <strong>Copy report</strong> and paste it into the chat.</li>
+    </ol>
+  </section>
+
+  <div id="drop" role="region" aria-label="Drop the library here">
+    <p>Drop the 4.8 folder or the .Backup file here (anywhere on this page works)</p>
+    <div class="buttons">
+      <input id="pick-folder" class="visually-hidden" type="file" webkitdirectory multiple>
+      <label class="button" for="pick-folder">Choose a folder…</label>
+      <input id="pick-files" class="visually-hidden" type="file" multiple>
+      <label class="button" for="pick-files">Choose files…</label>
+    </div>
+  </div>
+
+  <p id="status" class="status-line" role="status" aria-live="polite" data-state="idle">Starting…</p>
+
+  <label class="small" for="report">Report (structure only: versions, counts, sizes, byte offsets, yes/no)</label>
+  <textarea id="report" readonly spellcheck="false" placeholder="The report appears here."></textarea>
+  <div class="report-actions">
+    <button id="copy" type="button" disabled>Copy report</button>
+    <button id="save" type="button" disabled>Save report as a file</button>
+  </div>
+
+  <footer>
+    <p>Nothing leaves this computer: this page makes no network requests, and its security policy blocks them. In Chrome, "Choose a folder…" shows a dialog that says "Upload"; nothing is uploaded, the page only reads the files here.</p>
+    <p>An independent test tool, not affiliated with, endorsed by, or sponsored by Garmin Ltd. or its subsidiaries. Garmin and BaseCamp are trademarks of Garmin Ltd. or its subsidiaries.</p>
+  </footer>
+</main>
+<script>/*__GATE1_BUNDLE__*/</script>
+</body>
+</html>

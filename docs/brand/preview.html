@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Foldertrail brand sheet</title>
+  <!-- A local review sheet for docs/brand/BRAND.md. Open it straight from the repository (file://). It uses the
+       site's own base.css, so the lockup and the colour swatches always show what the site ships today.
+       Not part of the site: tools/build.js copies site/ only. -->
+  <link rel="stylesheet" href="../../site/assets/base.css">
+  <style>
+    main { max-width: 1040px; margin: 0 auto; padding: 32px 24px 64px; display: grid; gap: 40px; }
+    section { display: grid; gap: 14px; }
+    .lede { color: var(--ink-2); max-width: 70ch; }
+    .card { padding: 20px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--panel); }
+    .row { display: flex; flex-wrap: wrap; align-items: end; gap: 28px; }
+    .row figure { margin: 0; display: grid; justify-items: center; gap: 8px; }
+    .row figcaption, .swatch-name, .swatch-hex { font-size: 0.8125rem; color: var(--ink-3); }
+    .on-dark { background: #111412; }
+    .on-dark figcaption { color: #939d97; }
+    .px { image-rendering: pixelated; }
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+    .swatch { border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; background: var(--panel); }
+    .swatch-chip { block-size: 48px; border-bottom: 1px solid var(--line); }
+    .swatch-text { padding: 8px 10px; display: grid; }
+    .swatch-name { color: var(--ink); font-family: var(--font-mono); }
+    .swatch-hex { font-family: var(--font-mono); }
+    .type-sample > * + * { margin-top: 10px; }
+    .hero-size { font-size: 2.875rem; font-weight: 700; line-height: 1.07; letter-spacing: -0.03em; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="brand" href="#">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Foldertrail</span>
+      </a>
+      <span class="brand-desc">for Garmin BaseCamp libraries</span>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h1>Foldertrail brand sheet</h1>
+      <p class="lede">The lockup above is the site's own masthead, drawn by site/assets/base.css from mark-folder.svg
+        and mark-trail.svg. Everything on this page is read from the site's files, except the three app icons, which
+        live in docs/brand/.</p>
+    </section>
+
+    <section aria-labelledby="icons-title">
+      <h2 id="icons-title">App icons</h2>
+      <div class="card row">
+        <figure><img src="icon-512.svg" width="256" height="256" alt="Foldertrail icon, master"><figcaption>icon-512.svg at 256</figcaption></figure>
+        <figure><img src="icon-512.svg" width="128" height="128" alt=""><figcaption>icon-512.svg at 128</figcaption></figure>
+        <figure><img src="icon-512.svg" width="64" height="64" alt=""><figcaption>icon-512.svg at 64</figcaption></figure>
+        <figure><img src="icon-32.svg" width="32" height="32" alt="Foldertrail icon, 32 px"><figcaption>icon-32.svg</figcaption></figure>
+        <figure><img src="icon-16.svg" width="16" height="16" alt="Foldertrail icon, 16 px"><figcaption>icon-16.svg</figcaption></figure>
+        <figure><img src="../../site/assets/favicon.svg" width="32" height="32" alt="The favicon the site ships"><figcaption>site favicon.svg</figcaption></figure>
+      </div>
+      <div class="card row on-dark">
+        <figure><img src="icon-512.svg" width="128" height="128" alt=""><figcaption>on a dark ground</figcaption></figure>
+        <figure><img src="icon-512.svg" width="64" height="64" alt=""><figcaption>64</figcaption></figure>
+        <figure><img src="icon-32.svg" width="32" height="32" alt=""><figcaption>32</figcaption></figure>
+        <figure><img src="icon-16.svg" width="16" height="16" alt=""><figcaption>16</figcaption></figure>
+      </div>
+    </section>
+
+    <section aria-labelledby="colour-title">
+      <h2 id="colour-title">Colour tokens</h2>
+      <p class="lede">Read live from base.css with getComputedStyle. Switch the system between light and dark to see
+        the other set.</p>
+      <div class="swatches" id="swatches"></div>
+    </section>
+
+    <section aria-labelledby="type-title">
+      <h2 id="type-title">Type</h2>
+      <div class="card type-sample">
+        <p class="hero-size">Keep the folders you built in BaseCamp</p>
+        <h1>Here’s what Foldertrail found</h1>
+        <h2>What will not convert</h2>
+        <p>Body text is the system font at 16 px with a line height of 1.5. Your library is never uploaded.</p>
+        <p><code>~/Library/Application Support/Garmin/BaseCamp/Database</code></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>Foldertrail is an independent tool, not affiliated with, endorsed by, or sponsored by Garmin Ltd. or its
+        subsidiaries. Garmin and BaseCamp are trademarks of Garmin Ltd. or its subsidiaries.</p>
+    </div>
+  </footer>
+
+  <script>
+    const names = ['ground', 'panel', 'panel-2', 'panel-sunk', 'ink', 'ink-2', 'ink-3', 'line', 'line-strong',
+      'field-line', 'accent', 'accent-hover', 'accent-ink', 'accent-wash', 'accent-line', 'trail', 'trail-line',
+      'warn', 'warn-wash', 'warn-line', 'bad', 'bad-wash', 'bad-line', 'focus'];
+    const style = getComputedStyle(document.documentElement);
+    const box = document.getElementById('swatches');
+    for (const name of names) {
+      const value = style.getPropertyValue('--' + name).trim();
+      const swatch = document.createElement('div');
+      swatch.className = 'swatch';
+      const chip = document.createElement('div');
+      chip.className = 'swatch-chip';
+      chip.style.background = value;
+      const text = document.createElement('div');
+      text.className = 'swatch-text';
+      const n = document.createElement('span');
+      n.className = 'swatch-name';
+      n.textContent = '--' + name;
+      const h = document.createElement('span');
+      h.className = 'swatch-hex';
+      h.textContent = value;
+      text.append(n, h);
+      swatch.append(chip, text);
+      box.append(swatch);
+    }
+  </script>
+</body>
+</html>

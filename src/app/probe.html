@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- No network at all: no fetch, no images, no fonts, no forms. Scripts only from this origin. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; img-src 'none'; font-src 'none'; connect-src 'none'; media-src 'none'; object-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Drop probe (M0)</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #fbfaf7;
+    --fg: #1d1d1b;
+    --muted: #5d5b55;
+    --line: #d9d5cc;
+    --panel: #ffffff;
+    --accent: #2f6b4f;
+    --warn-bg: #fff3d6;
+    --warn-fg: #6b4a00;
+    --bad: #9b2c22;
+    --good: #2f6b4f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161614;
+      --fg: #ecebe6;
+      --muted: #a8a59c;
+      --line: #3a3934;
+      --panel: #1f1f1c;
+      --accent: #7cc4a0;
+      --warn-bg: #3b2f12;
+      --warn-fg: #f3d58a;
+      --bad: #f09a8f;
+      --good: #7cc4a0;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  header, main, footer { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+  header { padding-top: 24px; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  h2 { font-size: 16px; margin: 28px 0 8px; }
+  p { margin: 6px 0; }
+  code, pre, .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 13px; }
+  .muted { color: var(--muted); }
+  .warn { background: var(--warn-bg); color: var(--warn-fg); padding: 10px 12px; border-radius: 6px; }
+  #drop-zone {
+    margin: 16px 0;
+    padding: 36px 16px;
+    border: 2px dashed var(--line);
+    border-radius: 10px;
+    text-align: center;
+    background: var(--panel);
+  }
+  body.dragging #drop-zone { border-color: var(--accent); }
+  .pickers { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; }
+  .pickers label { display: inline-flex; flex-direction: column; gap: 4px; }
+  button { font: inherit; padding: 4px 12px; }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: left; padding: 4px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-weight: 600; white-space: nowrap; }
+  td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  tr.skipped td { color: var(--muted); }
+  .ok { color: var(--good); font-weight: 600; }
+  .bad { color: var(--bad); font-weight: 600; }
+  pre { white-space: pre-wrap; word-break: break-word; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; margin: 0; }
+  ol { padding-left: 20px; }
+  footer { padding: 32px 16px 40px; color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Drop probe (M0)</h1>
+  <p class="muted">A local test page (decision B30). It shows only names relative to what you drop, sizes, and what the
+    intake found. It reads no file contents except the first 4 bytes of a loose file, and a backup's table of contents.</p>
+</header>
+<main>
+  <p id="not-loaded" class="warn">The probe script did not run. Browsers refuse module scripts on <code>file://</code>
+    pages, so serve the repository folder over http://127.0.0.1 instead: in Terminal, in the repository folder, run
+    <code>python3 -m http.server 8000 --bind 127.0.0.1</code>, then open
+    <code>http://127.0.0.1:8000/src/app/probe.html</code>.</p>
+
+  <section aria-labelledby="try-h">
+    <h2 id="try-h">What to try in each browser (Safari, Chrome, Firefox)</h2>
+    <ol>
+      <li>In Finder choose Go &gt; Go to Folder…, open <code>~/Library/Application Support</code>, make a folder
+        <code>Probe/Database/4.8</code> with empty files <code>AllData.gdb</code>, <code>FolderData.gfi</code> and a
+        <code>TrackSegments</code> folder, then drag <code>4.8</code> (and separately <code>Probe</code>) onto this page.</li>
+      <li>Pick the same folder with "Choose folder". Note the exact words of any dialog the browser shows.</li>
+      <li>Drag a package onto the page. A folder renamed to end in <code>.bclibrary</code> is probably only a package on
+        a Mac where BaseCamp is installed (a guess: the app that owns an extension declares it a package), so also try a
+        package that exists anyway, such as an app from /Applications.</li>
+      <li>Compress a folder in Finder (right-click &gt; Compress), then drop the .zip and pick it with "Choose files".
+        Rename a copy to end in <code>.Backup</code> and try that too.</li>
+      <li>Copy the structure-only summary below into the M0 log. It holds no file names.</li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="features-h">
+    <h2 id="features-h">This browser</h2>
+    <div class="table-wrap"><table id="features"><tbody></tbody></table></div>
+    <p class="muted mono" id="ua"></p>
+  </section>
+
+  <div id="drop-zone">Drop a folder, a package, or a .Backup / .zip file anywhere on this page</div>
+  <div class="pickers">
+    <label>Choose folder <input type="file" id="pick-folder" webkitdirectory multiple></label>
+    <label>Choose files <input type="file" id="pick-files" multiple></label>
+    <button type="button" id="cancel" disabled>Cancel</button>
+  </div>
+  <p id="status" role="status" aria-live="polite" class="muted"></p>
+
+  <section id="out" hidden>
+    <h2>Structure-only summary (no names; safe to paste into the M0 log)</h2>
+    <pre id="summary"></pre>
+
+    <h2>What the browser handed over</h2>
+    <p id="delivery-note" class="muted"></p>
+    <div class="table-wrap"><table id="delivery">
+      <thead><tr><th>#</th><th>kind</th><th>type</th><th>entry</th><th>entry name</th><th>fullPath</th><th>getAsFile name</th><th>size</th><th>file type</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+
+    <h2>Intake result</h2>
+    <div class="table-wrap"><table id="result"><tbody></tbody></table></div>
+    <h2>Problems</h2>
+    <div class="table-wrap"><table id="problems"><thead><tr><th>code</th><th>count</th><th>message</th></tr></thead><tbody></tbody></table></div>
+    <h2>Notes</h2>
+    <div class="table-wrap"><table id="notes"><thead><tr><th>code</th><th>count</th><th>message</th></tr></thead><tbody></tbody></table></div>
+
+    <h2>Every item delivered, relative to the drop root</h2>
+    <p id="listing-note" class="muted"></p>
+    <div class="table-wrap"><table id="listing">
+      <thead><tr><th>path</th><th>kind</th><th>size (bytes)</th><th>role</th><th>in backup</th><th>not used because</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </section>
+</main>
+<footer>
+  Nothing is uploaded: this page makes no network requests, and its Content-Security-Policy blocks them.
+  This is an independent tool, not affiliated with, endorsed by, or sponsored by Garmin Ltd. or its subsidiaries.
+  Garmin and BaseCamp are trademarks of Garmin Ltd. or its subsidiaries.
+</footer>
+<script type="module" src="probe.js"></script>
+</body>
+</html>

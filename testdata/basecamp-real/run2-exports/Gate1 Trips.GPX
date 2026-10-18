@@ -1,0 +1,563 @@
+<?xml version="1.0"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wptx1="http://www.garmin.com/xmlschemas/WaypointExtension/v1" xmlns:gpxtrx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:trp="http://www.garmin.com/xmlschemas/TripExtensions/v1" xmlns:adv="http://www.garmin.com/xmlschemas/AdventuresExtensions/v1" xmlns:prs="http://www.garmin.com/xmlschemas/PressureExtension/v1" xmlns:tmd="http://www.garmin.com/xmlschemas/TripMetaDataExtensions/v1" xmlns:vptm="http://www.garmin.com/xmlschemas/ViaPointTransportationModeExtensions/v1" xmlns:ctx="http://www.garmin.com/xmlschemas/CreationTimeExtension/v1" xmlns:gpxacc="http://www.garmin.com/xmlschemas/AccelerationExtension/v1" xmlns:gpxpx="http://www.garmin.com/xmlschemas/PowerExtension/v1" xmlns:vidx1="http://www.garmin.com/xmlschemas/VideoExtension/v1" creator="Garmin Desktop App" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/WaypointExtension/v1 http://www8.garmin.com/xmlschemas/WaypointExtensionv1.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/ActivityExtension/v1 http://www8.garmin.com/xmlschemas/ActivityExtensionv1.xsd http://www.garmin.com/xmlschemas/AdventuresExtensions/v1 http://www8.garmin.com/xmlschemas/AdventuresExtensionv1.xsd http://www.garmin.com/xmlschemas/PressureExtension/v1 http://www.garmin.com/xmlschemas/PressureExtensionv1.xsd http://www.garmin.com/xmlschemas/TripExtensions/v1 http://www.garmin.com/xmlschemas/TripExtensionsv1.xsd http://www.garmin.com/xmlschemas/TripMetaDataExtensions/v1 http://www.garmin.com/xmlschemas/TripMetaDataExtensionsv1.xsd http://www.garmin.com/xmlschemas/ViaPointTransportationModeExtensions/v1 http://www.garmin.com/xmlschemas/ViaPointTransportationModeExtensionsv1.xsd http://www.garmin.com/xmlschemas/CreationTimeExtension/v1 http://www.garmin.com/xmlschemas/CreationTimeExtensionsv1.xsd http://www.garmin.com/xmlschemas/AccelerationExtension/v1 http://www.garmin.com/xmlschemas/AccelerationExtensionv1.xsd http://www.garmin.com/xmlschemas/PowerExtension/v1 http://www.garmin.com/xmlschemas/PowerExtensionv1.xsd http://www.garmin.com/xmlschemas/VideoExtension/v1 http://www.garmin.com/xmlschemas/VideoExtensionv1.xsd">
+  <metadata>
+    <link href="http://www.garmin.com">
+      <text>Garmin International</text>
+    </link>
+    <time>2026-10-07T11:48:08Z</time>
+    <bounds maxlat="20.25052341632545" maxlon="-123.387654265388846" minlat="-48.881234480068088" minlon="50.401234533637762"/>
+  </metadata>
+  <wpt lat="-48.876123363152146" lon="-123.393456721678376">
+    <ele>12.5</ele>
+    <time>2001-02-03T04:05:06Z</time>
+    <name>Gate1 Waypoint Alpha</name>
+    <cmt>Gate1 comment Alpha</cmt>
+    <desc>Gate1 comment Alpha</desc>
+    <sym>Flag, Blue</sym>
+    <type>user</type>
+    <extensions>
+      <gpxx:WaypointExtension>
+        <gpxx:DisplayMode>SymbolAndName</gpxx:DisplayMode>
+      </gpxx:WaypointExtension>
+      <wptx1:WaypointExtension>
+        <wptx1:DisplayMode>SymbolAndName</wptx1:DisplayMode>
+      </wptx1:WaypointExtension>
+      <ctx:CreationTimeExtension>
+        <ctx:CreationTime>2001-02-03T04:05:06Z</ctx:CreationTime>
+      </ctx:CreationTimeExtension>
+    </extensions>
+  </wpt>
+  <wpt lat="-48.881234480068088" lon="-123.401234541088343">
+    <time>2026-10-07T11:40:16Z</time>
+    <name>Gate1 Waypoint Bravo</name>
+    <sym>Flag, Blue</sym>
+    <type>user</type>
+    <extensions>
+      <gpxx:WaypointExtension>
+        <gpxx:DisplayMode>SymbolAndName</gpxx:DisplayMode>
+        <gpxx:Address>
+          <gpxx:StreetAddress>1 Gate1 Imported Street</gpxx:StreetAddress>
+          <gpxx:City>Gate1 Imported City</gpxx:City>
+          <gpxx:State>Gate1 Imported State</gpxx:State>
+          <gpxx:Country>Gate1 Imported Country</gpxx:Country>
+          <gpxx:PostalCode>G1-0001</gpxx:PostalCode>
+        </gpxx:Address>
+        <gpxx:PhoneNumber>555-0101</gpxx:PhoneNumber>
+      </gpxx:WaypointExtension>
+      <wptx1:WaypointExtension>
+        <wptx1:DisplayMode>SymbolAndName</wptx1:DisplayMode>
+        <wptx1:Address>
+          <wptx1:StreetAddress>1 Gate1 Imported Street</wptx1:StreetAddress>
+          <wptx1:City>Gate1 Imported City</wptx1:City>
+          <wptx1:State>Gate1 Imported State</wptx1:State>
+          <wptx1:Country>Gate1 Imported Country</wptx1:Country>
+          <wptx1:PostalCode>G1-0001</wptx1:PostalCode>
+        </wptx1:Address>
+        <wptx1:PhoneNumber>555-0101</wptx1:PhoneNumber>
+      </wptx1:WaypointExtension>
+      <ctx:CreationTimeExtension>
+        <ctx:CreationTime>2026-10-07T11:40:16Z</ctx:CreationTime>
+      </ctx:CreationTimeExtension>
+    </extensions>
+  </wpt>
+  <wpt lat="-48.869876498356462" lon="-123.387654265388846">
+    <time>2026-10-07T11:40:16Z</time>
+    <name>Gate1 Waypoint Charlie</name>
+    <sym>Flag, Blue</sym>
+    <type>user</type>
+    <extensions>
+      <gpxx:WaypointExtension>
+        <gpxx:DisplayMode>SymbolAndName</gpxx:DisplayMode>
+      </gpxx:WaypointExtension>
+      <wptx1:WaypointExtension>
+        <wptx1:DisplayMode>SymbolAndName</wptx1:DisplayMode>
+      </wptx1:WaypointExtension>
+      <ctx:CreationTimeExtension>
+        <ctx:CreationTime>2026-10-07T11:40:16Z</ctx:CreationTime>
+      </ctx:CreationTimeExtension>
+    </extensions>
+  </wpt>
+  <wpt lat="20.123456697911024" lon="50.456789117306471">
+    <ele>100.279200000000003</ele>
+    <time>2026-10-07T11:40:26Z</time>
+    <name>Gate1 Waypoint Delta</name>
+    <cmt>Gate1 comment Delta</cmt>
+    <desc>Gate1 comment Delta</desc>
+    <sym>Flag, Blue</sym>
+    <type>user</type>
+    <extensions>
+      <gpxx:WaypointExtension>
+        <gpxx:DisplayMode>SymbolAndName</gpxx:DisplayMode>
+        <gpxx:Address>
+          <gpxx:StreetAddress>12 Gate1 Typed Lane</gpxx:StreetAddress>
+          <gpxx:City>Gate1 Typed Town</gpxx:City>
+          <gpxx:State>Gate1 Typed State</gpxx:State>
+          <gpxx:Country>Gate1 Typed Land</gpxx:Country>
+          <gpxx:PostalCode>G1-0002</gpxx:PostalCode>
+        </gpxx:Address>
+        <gpxx:PhoneNumber>555-0102</gpxx:PhoneNumber>
+      </gpxx:WaypointExtension>
+      <wptx1:WaypointExtension>
+        <wptx1:DisplayMode>SymbolAndName</wptx1:DisplayMode>
+        <wptx1:Address>
+          <wptx1:StreetAddress>12 Gate1 Typed Lane</wptx1:StreetAddress>
+          <wptx1:City>Gate1 Typed Town</wptx1:City>
+          <wptx1:State>Gate1 Typed State</wptx1:State>
+          <wptx1:Country>Gate1 Typed Land</wptx1:Country>
+          <wptx1:PostalCode>G1-0002</wptx1:PostalCode>
+        </wptx1:Address>
+        <wptx1:PhoneNumber>555-0102</wptx1:PhoneNumber>
+      </wptx1:WaypointExtension>
+      <ctx:CreationTimeExtension>
+        <ctx:CreationTime>2026-10-07T11:40:26Z</ctx:CreationTime>
+      </ctx:CreationTimeExtension>
+    </extensions>
+  </wpt>
+  <wpt lat="20.134567832574248" lon="50.46789119951427">
+    <time>2001-02-03T05:06:07Z</time>
+    <name>Gate1 Waypoint Echo</name>
+    <sym>Flag, Blue</sym>
+    <type>user</type>
+    <extensions>
+      <gpxx:WaypointExtension>
+        <gpxx:DisplayMode>SymbolAndName</gpxx:DisplayMode>
+      </gpxx:WaypointExtension>
+      <wptx1:WaypointExtension>
+        <wptx1:DisplayMode>SymbolAndName</wptx1:DisplayMode>
+      </wptx1:WaypointExtension>
+      <ctx:CreationTimeExtension>
+        <ctx:CreationTime>2001-02-03T05:06:07Z</ctx:CreationTime>
+      </ctx:CreationTimeExtension>
+    </extensions>
+  </wpt>
+  <wpt lat="-35.251234481111169" lon="85.751234488561749">
+    <ele>3.75</ele>
+    <time>2006-07-08T09:10:11Z</time>
+    <name>Gate1 Waypoint Foxtrot</name>
+    <cmt>Gate1 comment Foxtrot</cmt>
+    <desc>Gate1 comment Foxtrot</desc>
+    <sym>Flag, Blue</sym>
+    <type>user</type>
+    <extensions>
+      <gpxx:WaypointExtension>
+        <gpxx:DisplayMode>SymbolAndName</gpxx:DisplayMode>
+      </gpxx:WaypointExtension>
+      <wptx1:WaypointExtension>
+        <wptx1:DisplayMode>SymbolAndName</wptx1:DisplayMode>
+      </wptx1:WaypointExtension>
+      <ctx:CreationTimeExtension>
+        <ctx:CreationTime>2006-07-08T09:10:11Z</ctx:CreationTime>
+      </ctx:CreationTimeExtension>
+    </extensions>
+  </wpt>
+  <rte>
+    <name>Gate1 Route Four</name>
+    <extensions>
+      <gpxx:RouteExtension>
+        <gpxx:IsAutoNamed>false</gpxx:IsAutoNamed>
+        <gpxx:DisplayColor>Magenta</gpxx:DisplayColor>
+      </gpxx:RouteExtension>
+    </extensions>
+    <rtept lat="20.101234512403607" lon="50.401234533637762">
+      <time>2026-10-07T11:40:26Z</time>
+      <name>Gate1 Via One</name>
+      <sym>Flag, Blue</sym>
+      <extensions>
+        <trp:ViaPoint>
+          <trp:CalculationMode>Direct</trp:CalculationMode>
+        </trp:ViaPoint>
+        <gpxx:RoutePointExtension>
+          <gpxx:Subclass>000000000000FFFFFFFFFFFFFFFFFFFFFFFF</gpxx:Subclass>
+        </gpxx:RoutePointExtension>
+      </extensions>
+    </rtept>
+    <rtept lat="20.111234458163381" lon="50.42123450897634">
+      <time>2026-10-07T11:40:26Z</time>
+      <name>Gate1 Via Two</name>
+      <sym>Flag, Blue</sym>
+      <extensions>
+        <trp:ViaPoint>
+          <trp:CalculationMode>Direct</trp:CalculationMode>
+        </trp:ViaPoint>
+        <gpxx:RoutePointExtension>
+          <gpxx:Subclass>000000000000FFFFFFFFFFFFFFFFFFFFFFFF</gpxx:Subclass>
+        </gpxx:RoutePointExtension>
+      </extensions>
+    </rtept>
+    <rtept lat="20.121234487742186" lon="50.441234484314919">
+      <time>2026-10-07T11:40:26Z</time>
+      <name>Gate1 Via Three</name>
+      <sym>Flag, Blue</sym>
+      <extensions>
+        <trp:ViaPoint>
+          <trp:CalculationMode>Direct</trp:CalculationMode>
+        </trp:ViaPoint>
+        <gpxx:RoutePointExtension>
+          <gpxx:Subclass>000000000000FFFFFFFFFFFFFFFFFFFFFFFF</gpxx:Subclass>
+        </gpxx:RoutePointExtension>
+      </extensions>
+    </rtept>
+    <rtept lat="20.131234517320991" lon="50.461234459653497">
+      <time>2026-10-07T11:40:26Z</time>
+      <name>Gate1 Via Four</name>
+      <sym>Flag, Blue</sym>
+      <extensions>
+        <trp:ViaPoint>
+          <trp:CalculationMode>Direct</trp:CalculationMode>
+        </trp:ViaPoint>
+        <gpxx:RoutePointExtension>
+          <gpxx:Subclass>000000000000FFFFFFFFFFFFFFFFFFFFFFFF</gpxx:Subclass>
+        </gpxx:RoutePointExtension>
+      </extensions>
+    </rtept>
+  </rte>
+  <trk>
+    <name>Gate1 Track Bare</name>
+    <extensions>
+      <gpxx:TrackExtension>
+        <gpxx:DisplayColor>DarkGray</gpxx:DisplayColor>
+      </gpxx:TrackExtension>
+    </extensions>
+    <trkseg>
+      <trkpt lat="20.220123426988721" lon="50.520123364403844"/>
+      <trkpt lat="20.220213364809752" lon="50.519953379407525"/>
+      <trkpt lat="20.220303386449814" lon="50.519783394411206"/>
+      <trkpt lat="20.220393408089876" lon="50.519613409414887"/>
+      <trkpt lat="20.220483429729939" lon="50.519443424418569"/>
+      <trkpt lat="20.220573367550969" lon="50.51927343942225"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Gate1 Track No Time</name>
+    <extensions>
+      <gpxx:TrackExtension>
+        <gpxx:DisplayColor>DarkGray</gpxx:DisplayColor>
+      </gpxx:TrackExtension>
+    </extensions>
+    <trkseg>
+      <trkpt lat="20.210123397409916" lon="50.510123418644071">
+        <ele>150.5</ele>
+      </trkpt>
+      <trkpt lat="20.210003368556499" lon="50.510333385318518">
+        <ele>151.5</ele>
+      </trkpt>
+      <trkpt lat="20.209883423522115" lon="50.510543435811996">
+        <ele>152.5</ele>
+      </trkpt>
+      <trkpt lat="20.209763394668698" lon="50.510753402486444">
+        <ele>153.5</ele>
+      </trkpt>
+      <trkpt lat="20.209643365815282" lon="50.510963369160891">
+        <ele>154.5</ele>
+      </trkpt>
+      <trkpt lat="20.209523420780897" lon="50.511173419654369">
+        <ele>155.5</ele>
+      </trkpt>
+      <trkpt lat="20.209403391927481" lon="50.511383386328816">
+        <ele>156.5</ele>
+      </trkpt>
+      <trkpt lat="20.209283363074064" lon="50.511593436822295">
+        <ele>157.5</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Gate1 Track Sensors</name>
+    <extensions>
+      <gpxx:TrackExtension>
+        <gpxx:DisplayColor>DarkGray</gpxx:DisplayColor>
+      </gpxx:TrackExtension>
+    </extensions>
+    <trkseg>
+      <trkpt lat="-35.27012343518436" lon="85.770123358815908">
+        <ele>5.5</ele>
+        <time>2004-05-06T07:08:09Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension>
+            <gpxtpx:atemp>20.5</gpxtpx:atemp>
+            <gpxtpx:hr>100</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxx:TrackPointExtension>
+            <gpxx:Temperature>20.5</gpxx:Temperature>
+          </gpxx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+      <trkpt lat="-35.269993431866169" lon="85.770253362134099">
+        <ele>6</ele>
+        <time>2004-05-06T07:08:14Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension>
+            <gpxtpx:atemp>20.75</gpxtpx:atemp>
+            <gpxtpx:hr>101</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxx:TrackPointExtension>
+            <gpxx:Temperature>20.75</gpxx:Temperature>
+          </gpxx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+      <trkpt lat="-35.269863428547978" lon="85.77038336545229">
+        <ele>6.5</ele>
+        <time>2004-05-06T07:08:19Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension>
+            <gpxtpx:atemp>21</gpxtpx:atemp>
+            <gpxtpx:hr>102</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxx:TrackPointExtension>
+            <gpxx:Temperature>21</gpxx:Temperature>
+          </gpxx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+      <trkpt lat="-35.269733425229788" lon="85.77051336877048">
+        <ele>7</ele>
+        <time>2004-05-06T07:08:24Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension>
+            <gpxtpx:atemp>21.25</gpxtpx:atemp>
+            <gpxtpx:hr>103</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxx:TrackPointExtension>
+            <gpxx:Temperature>21.25</gpxx:Temperature>
+          </gpxx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+      <trkpt lat="-35.269603421911597" lon="85.770643372088671">
+        <ele>7.5</ele>
+        <time>2004-05-06T07:08:29Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension>
+            <gpxtpx:atemp>21.5</gpxtpx:atemp>
+            <gpxtpx:hr>104</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxx:TrackPointExtension>
+            <gpxx:Temperature>21.5</gpxx:Temperature>
+          </gpxx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+      <trkpt lat="-35.269473418593407" lon="85.770773375406861">
+        <ele>8</ele>
+        <time>2004-05-06T07:08:34Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension>
+            <gpxtpx:atemp>21.75</gpxtpx:atemp>
+            <gpxtpx:hr>105</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxx:TrackPointExtension>
+            <gpxx:Temperature>21.75</gpxx:Temperature>
+          </gpxx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+      <trkpt lat="-35.269343415275216" lon="85.770903378725052">
+        <ele>8.5</ele>
+        <time>2004-05-06T07:08:39Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension>
+            <gpxtpx:atemp>22</gpxtpx:atemp>
+            <gpxtpx:hr>106</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxx:TrackPointExtension>
+            <gpxx:Temperature>22</gpxx:Temperature>
+          </gpxx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+      <trkpt lat="-35.269213411957026" lon="85.771033382043242">
+        <ele>9</ele>
+        <time>2004-05-06T07:08:44Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension>
+            <gpxtpx:atemp>22.25</gpxtpx:atemp>
+            <gpxtpx:hr>107</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxx:TrackPointExtension>
+            <gpxx:Temperature>22.25</gpxx:Temperature>
+          </gpxx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+      <trkpt lat="-35.269083408638835" lon="85.771163385361433">
+        <ele>9.5</ele>
+        <time>2004-05-06T07:08:49Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension>
+            <gpxtpx:atemp>22.5</gpxtpx:atemp>
+            <gpxtpx:hr>108</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxx:TrackPointExtension>
+            <gpxx:Temperature>22.5</gpxx:Temperature>
+          </gpxx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Gate1 Track Timed</name>
+    <extensions>
+      <gpxx:TrackExtension>
+        <gpxx:DisplayColor>DarkGray</gpxx:DisplayColor>
+      </gpxx:TrackExtension>
+    </extensions>
+    <trkseg>
+      <trkpt lat="20.200123367831111" lon="50.500123389065266">
+        <ele>200</ele>
+        <time>2002-03-04T05:06:07Z</time>
+      </trkpt>
+      <trkpt lat="20.200273403897882" lon="50.500373421236873">
+        <ele>200.5</ele>
+        <time>2002-03-04T05:06:17Z</time>
+      </trkpt>
+      <trkpt lat="20.200423439964652" lon="50.500623369589448">
+        <ele>201</ele>
+        <time>2002-03-04T05:06:27Z</time>
+      </trkpt>
+      <trkpt lat="20.200573392212391" lon="50.500873401761055">
+        <ele>201.5</ele>
+        <time>2002-03-04T05:06:37Z</time>
+      </trkpt>
+      <trkpt lat="20.200723428279161" lon="50.501123433932662">
+        <ele>202</ele>
+        <time>2002-03-04T05:06:47Z</time>
+      </trkpt>
+      <trkpt lat="20.2008733805269" lon="50.501373382285237">
+        <ele>202.5</ele>
+        <time>2002-03-04T05:06:57Z</time>
+      </trkpt>
+      <trkpt lat="20.201023416593671" lon="50.501623414456844">
+        <ele>203</ele>
+        <time>2002-03-04T05:07:07Z</time>
+      </trkpt>
+      <trkpt lat="20.20117336884141" lon="50.50187336280942">
+        <ele>203.5</ele>
+        <time>2002-03-04T05:07:17Z</time>
+      </trkpt>
+      <trkpt lat="20.20132340490818" lon="50.502123394981027">
+        <ele>204</ele>
+        <time>2002-03-04T05:07:27Z</time>
+      </trkpt>
+      <trkpt lat="20.201473440974951" lon="50.502373427152634">
+        <ele>204.5</ele>
+        <time>2002-03-04T05:07:37Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Gate1 Track Two Segments</name>
+    <extensions>
+      <gpxx:TrackExtension>
+        <gpxx:DisplayColor>DarkGray</gpxx:DisplayColor>
+      </gpxx:TrackExtension>
+    </extensions>
+    <trkseg>
+      <trkpt lat="20.230123372748494" lon="50.530123393982649">
+        <ele>300.25</ele>
+        <time>2003-04-05T06:07:08Z</time>
+      </trkpt>
+      <trkpt lat="20.230233427137136" lon="50.530253397300839">
+        <ele>300.5</ele>
+        <time>2003-04-05T06:07:23Z</time>
+      </trkpt>
+      <trkpt lat="20.230343397706747" lon="50.53038340061903">
+        <ele>300.75</ele>
+        <time>2003-04-05T06:07:38Z</time>
+      </trkpt>
+      <trkpt lat="20.230453368276358" lon="50.530513403937221">
+        <ele>301</ele>
+        <time>2003-04-05T06:07:53Z</time>
+      </trkpt>
+      <trkpt lat="20.230563422665" lon="50.530643407255411">
+        <ele>301.25</ele>
+        <time>2003-04-05T06:08:08Z</time>
+      </trkpt>
+      <trkpt lat="20.230673393234611" lon="50.530773410573602">
+        <ele>301.5</ele>
+        <time>2003-04-05T06:08:23Z</time>
+      </trkpt>
+      <trkpt lat="20.240123402327299" lon="50.540123423561454">
+        <ele>310.75</ele>
+        <time>2003-04-05T07:00:00Z</time>
+      </trkpt>
+      <trkpt lat="20.240263380110264" lon="50.540043376386166">
+        <ele>311</ele>
+        <time>2003-04-05T07:00:15Z</time>
+      </trkpt>
+      <trkpt lat="20.24040344171226" lon="50.539963413029909">
+        <ele>311.25</ele>
+        <time>2003-04-05T07:00:30Z</time>
+      </trkpt>
+      <trkpt lat="20.240543419495225" lon="50.539883365854621">
+        <ele>311.5</ele>
+        <time>2003-04-05T07:00:45Z</time>
+      </trkpt>
+      <trkpt lat="20.24068339727819" lon="50.539803402498364">
+        <ele>311.75</ele>
+        <time>2003-04-05T07:01:00Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Gate1 Twin Track</name>
+    <extensions>
+      <gpxx:TrackExtension>
+        <gpxx:DisplayColor>DarkGray</gpxx:DisplayColor>
+      </gpxx:TrackExtension>
+    </extensions>
+    <trkseg>
+      <trkpt lat="-35.260123405605555" lon="85.760123413056135">
+        <ele>0.5</ele>
+        <time>2005-06-07T09:00:00Z</time>
+      </trkpt>
+      <trkpt lat="-35.260223401710391" lon="85.760273365303874">
+        <ele>1</ele>
+        <time>2005-06-07T09:00:20Z</time>
+      </trkpt>
+      <trkpt lat="-35.260323397815228" lon="85.760423401370645">
+        <ele>1.5</ele>
+        <time>2005-06-07T09:00:40Z</time>
+      </trkpt>
+      <trkpt lat="-35.260423393920064" lon="85.760573437437415">
+        <ele>2</ele>
+        <time>2005-06-07T09:01:00Z</time>
+      </trkpt>
+      <trkpt lat="-35.2605233900249" lon="85.760723389685154">
+        <ele>2.5</ele>
+        <time>2005-06-07T09:01:20Z</time>
+      </trkpt>
+      <trkpt lat="-35.260623386129737" lon="85.760873425751925">
+        <ele>3</ele>
+        <time>2005-06-07T09:01:40Z</time>
+      </trkpt>
+      <trkpt lat="-35.260723382234573" lon="85.761023377999663">
+        <ele>3.5</ele>
+        <time>2005-06-07T09:02:00Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Gate1 Twin Track 001</name>
+    <extensions>
+      <gpxx:TrackExtension>
+        <gpxx:DisplayColor>DarkGray</gpxx:DisplayColor>
+      </gpxx:TrackExtension>
+    </extensions>
+    <trkseg>
+      <trkpt lat="20.250123431906104" lon="50.550123369321227">
+        <ele>250</ele>
+        <time>2005-06-07T08:09:10Z</time>
+      </trkpt>
+      <trkpt lat="20.250223428010941" lon="50.550223365426064">
+        <ele>252</ele>
+        <time>2005-06-07T08:09:30Z</time>
+      </trkpt>
+      <trkpt lat="20.250323424115777" lon="50.5503233615309">
+        <ele>254</ele>
+        <time>2005-06-07T08:09:50Z</time>
+      </trkpt>
+      <trkpt lat="20.250423420220613" lon="50.550423441454768">
+        <ele>256</ele>
+        <time>2005-06-07T08:10:10Z</time>
+      </trkpt>
+      <trkpt lat="20.25052341632545" lon="50.550523437559605">
+        <ele>258</ele>
+        <time>2005-06-07T08:10:30Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

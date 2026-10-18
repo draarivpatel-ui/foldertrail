@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="BCR Gate 1 kit (made-up test data)" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Gate1 Desert</name>
+    <desc>Made-up test data for the BCR Gate 1 check. Not a real place or trip.</desc>
+  </metadata>
+  <wpt lat="20.1234567" lon="50.4567891">
+    <ele>100.25</ele>
+    <name>Gate1 Waypoint Delta</name>
+    <cmt>Gate1 comment Delta</cmt>
+  </wpt>
+  <wpt lat="20.1345678" lon="50.4678912">
+    <time>2001-02-03T05:06:07Z</time>
+    <name>Gate1 Waypoint Echo</name>
+  </wpt>
+  <rte>
+    <name>Gate1 Route Four</name>
+    <rtept lat="20.1012345" lon="50.4012345">
+      <name>Gate1 Via One</name>
+    </rtept>
+    <rtept lat="20.1112345" lon="50.4212345">
+      <name>Gate1 Via Two</name>
+    </rtept>
+    <rtept lat="20.1212345" lon="50.4412345">
+      <name>Gate1 Via Three</name>
+    </rtept>
+    <rtept lat="20.1312345" lon="50.4612345">
+      <name>Gate1 Via Four</name>
+    </rtept>
+  </rte>
+  <trk>
+    <name>Gate1 Track Timed</name>
+    <trkseg>
+      <trkpt lat="20.2001234" lon="50.5001234">
+        <ele>200.0</ele>
+        <time>2002-03-04T05:06:07Z</time>
+      </trkpt>
+      <trkpt lat="20.2002734" lon="50.5003734">
+        <ele>200.5</ele>
+        <time>2002-03-04T05:06:17Z</time>
+      </trkpt>
+      <trkpt lat="20.2004234" lon="50.5006234">
+        <ele>201.0</ele>
+        <time>2002-03-04T05:06:27Z</time>
+      </trkpt>
+      <trkpt lat="20.2005734" lon="50.5008734">
+        <ele>201.5</ele>
+        <time>2002-03-04T05:06:37Z</time>
+      </trkpt>
+      <trkpt lat="20.2007234" lon="50.5011234">
+        <ele>202.0</ele>
+        <time>2002-03-04T05:06:47Z</time>
+      </trkpt>
+      <trkpt lat="20.2008734" lon="50.5013734">
+        <ele>202.5</ele>
+        <time>2002-03-04T05:06:57Z</time>
+      </trkpt>
+      <trkpt lat="20.2010234" lon="50.5016234">
+        <ele>203.0</ele>
+        <time>2002-03-04T05:07:07Z</time>
+      </trkpt>
+      <trkpt lat="20.2011734" lon="50.5018734">
+        <ele>203.5</ele>
+        <time>2002-03-04T05:07:17Z</time>
+      </trkpt>
+      <trkpt lat="20.2013234" lon="50.5021234">
+        <ele>204.0</ele>
+        <time>2002-03-04T05:07:27Z</time>
+      </trkpt>
+      <trkpt lat="20.2014734" lon="50.5023734">
+        <ele>204.5</ele>
+        <time>2002-03-04T05:07:37Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Gate1 Track No Time</name>
+    <trkseg>
+      <trkpt lat="20.2101234" lon="50.5101234">
+        <ele>150.5</ele>
+      </trkpt>
+      <trkpt lat="20.2100034" lon="50.5103334">
+        <ele>151.5</ele>
+      </trkpt>
+      <trkpt lat="20.2098834" lon="50.5105434">
+        <ele>152.5</ele>
+      </trkpt>
+      <trkpt lat="20.2097634" lon="50.5107534">
+        <ele>153.5</ele>
+      </trkpt>
+      <trkpt lat="20.2096434" lon="50.5109634">
+        <ele>154.5</ele>
+      </trkpt>
+      <trkpt lat="20.2095234" lon="50.5111734">
+        <ele>155.5</ele>
+      </trkpt>
+      <trkpt lat="20.2094034" lon="50.5113834">
+        <ele>156.5</ele>
+      </trkpt>
+      <trkpt lat="20.2092834" lon="50.5115934">
+        <ele>157.5</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Gate1 Track Bare</name>
+    <trkseg>
+      <trkpt lat="20.2201234" lon="50.5201234"/>
+      <trkpt lat="20.2202134" lon="50.5199534"/>
+      <trkpt lat="20.2203034" lon="50.5197834"/>
+      <trkpt lat="20.2203934" lon="50.5196134"/>
+      <trkpt lat="20.2204834" lon="50.5194434"/>
+      <trkpt lat="20.2205734" lon="50.5192734"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Gate1 Track Two Segments</name>
+    <trkseg>
+      <trkpt lat="20.2301234" lon="50.5301234">
+        <ele>300.25</ele>
+        <time>2003-04-05T06:07:08Z</time>
+      </trkpt>
+      <trkpt lat="20.2302334" lon="50.5302534">
+        <ele>300.5</ele>
+        <time>2003-04-05T06:07:23Z</time>
+      </trkpt>
+      <trkpt lat="20.2303434" lon="50.5303834">
+        <ele>300.75</ele>
+        <time>2003-04-05T06:07:38Z</time>
+      </trkpt>
+      <trkpt lat="20.2304534" lon="50.5305134">
+        <ele>301.0</ele>
+        <time>2003-04-05T06:07:53Z</time>
+      </trkpt>
+      <trkpt lat="20.2305634" lon="50.5306434">
+        <ele>301.25</ele>
+        <time>2003-04-05T06:08:08Z</time>
+      </trkpt>
+      <trkpt lat="20.2306734" lon="50.5307734">
+        <ele>301.5</ele>
+        <time>2003-04-05T06:08:23Z</time>
+      </trkpt>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="20.2401234" lon="50.5401234">
+        <ele>310.75</ele>
+        <time>2003-04-05T07:00:00Z</time>
+      </trkpt>
+      <trkpt lat="20.2402634" lon="50.5400434">
+        <ele>311.0</ele>
+        <time>2003-04-05T07:00:15Z</time>
+      </trkpt>
+      <trkpt lat="20.2404034" lon="50.5399634">
+        <ele>311.25</ele>
+        <time>2003-04-05T07:00:30Z</time>
+      </trkpt>
+      <trkpt lat="20.2405434" lon="50.5398834">
+        <ele>311.5</ele>
+        <time>2003-04-05T07:00:45Z</time>
+      </trkpt>
+      <trkpt lat="20.2406834" lon="50.5398034">
+        <ele>311.75</ele>
+        <time>2003-04-05T07:01:00Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Gate1 Twin Track</name>
+    <trkseg>
+      <trkpt lat="20.2501234" lon="50.5501234">
+        <ele>250.0</ele>
+        <time>2005-06-07T08:09:10Z</time>
+      </trkpt>
+      <trkpt lat="20.2502234" lon="50.5502234">
+        <ele>252.0</ele>
+        <time>2005-06-07T08:09:30Z</time>
+      </trkpt>
+      <trkpt lat="20.2503234" lon="50.5503234">
+        <ele>254.0</ele>
+        <time>2005-06-07T08:09:50Z</time>
+      </trkpt>
+      <trkpt lat="20.2504234" lon="50.5504234">
+        <ele>256.0</ele>
+        <time>2005-06-07T08:10:10Z</time>
+      </trkpt>
+      <trkpt lat="20.2505234" lon="50.5505234">
+        <ele>258.0</ele>
+        <time>2005-06-07T08:10:30Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

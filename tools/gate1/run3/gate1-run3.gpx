@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Foldertrail Gate1 run3 (made-up content)"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+  xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2">
+  <wpt lat="-30.1000000" lon="-20.1000000">
+    <ele>12.5</ele><time>2026-09-01T10:00:00Z</time>
+    <name>Gate1 R3 Waypoint Cat</name><cmt>Gate1 R3 comment Cat</cmt><sym>Campground</sym>
+    <extensions><gpxx:WaypointExtension>
+      <gpxx:Proximity>150</gpxx:Proximity><gpxx:Temperature>21.5</gpxx:Temperature><gpxx:Depth>7.25</gpxx:Depth>
+      <gpxx:DisplayMode>SymbolAndName</gpxx:DisplayMode>
+      <gpxx:Categories><gpxx:Category>Gate1 Cat One</gpxx:Category><gpxx:Category>Gate1 Cat Two</gpxx:Category></gpxx:Categories>
+      <gpxx:Address><gpxx:StreetAddress>3 Gate1 Run3 Road</gpxx:StreetAddress><gpxx:City>Gate1 Run3 City</gpxx:City><gpxx:State>Gate1 Run3 State</gpxx:State><gpxx:Country>Gate1 Run3 Land</gpxx:Country><gpxx:PostalCode>G1-0003</gpxx:PostalCode></gpxx:Address>
+      <gpxx:PhoneNumber Category="Phone">555-0103</gpxx:PhoneNumber>
+      <gpxx:PhoneNumber Category="Mobile">555-0104</gpxx:PhoneNumber>
+    </gpxx:WaypointExtension></extensions>
+  </wpt>
+  <wpt lat="-30.2000000" lon="-20.2000000"><name>Gate1 R3 Waypoint Summit</name><sym>Summit</sym></wpt>
+  <wpt lat="-30.3000000" lon="-20.3000000"><name>Gate1 R3 Waypoint Red Flag</name><sym>Flag, Red</sym></wpt>
+  <wpt lat="-30.4000000" lon="-20.4000000"><name>Gate1 R3 Waypoint No Symbol</name></wpt>
+  <rte>
+    <name>Gate1 R3 Route Two</name><cmt>Gate1 R3 route comment</cmt>
+    <extensions><gpxx:RouteExtension><gpxx:IsAutoNamed>false</gpxx:IsAutoNamed><gpxx:DisplayColor>Red</gpxx:DisplayColor></gpxx:RouteExtension></extensions>
+    <rtept lat="-31.0000000" lon="-21.0000000"><name>Gate1 R3 Via A</name></rtept>
+    <rtept lat="-31.1000000" lon="-21.1000000"><name>Gate1 R3 Via B</name></rtept>
+  </rte>
+  <rte>
+    <name>Gate1 R3 Route Three</name>
+    <rtept lat="-31.5000000" lon="-21.5000000"><name>Gate1 R3 Via C</name></rtept>
+    <rtept lat="-31.6000000" lon="-21.6000000"><name>Gate1 R3 Via D</name></rtept>
+    <rtept lat="-31.7000000" lon="-21.7000000"><name>Gate1 R3 Via E</name></rtept>
+  </rte>
+  <trk>
+    <name>Gate1 R3 Track Red Notes</name><cmt>Gate1 R3 track comment</cmt><desc>Gate1 R3 track description</desc>
+    <extensions><gpxx:TrackExtension><gpxx:DisplayColor>Red</gpxx:DisplayColor></gpxx:TrackExtension></extensions>
+    <trkseg>
+      <trkpt lat="-32.0000000" lon="-22.0000000"><ele>100.0</ele><time>2026-09-02T08:00:00Z</time></trkpt>
+      <trkpt lat="-32.0010000" lon="-22.0010000"><ele>101.0</ele><time>2026-09-02T08:01:00Z</time></trkpt>
+      <trkpt lat="-32.0020000" lon="-22.0020000"><ele>102.0</ele><time>2026-09-02T08:02:00Z</time></trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Gate1 R3 Track Blue Two Segments</name>
+    <extensions><gpxx:TrackExtension><gpxx:DisplayColor>Blue</gpxx:DisplayColor></gpxx:TrackExtension></extensions>
+    <trkseg>
+      <trkpt lat="-33.0000000" lon="-23.0000000"><ele>200.0</ele><time>2026-09-03T08:00:00Z</time></trkpt>
+      <trkpt lat="-33.0010000" lon="-23.0010000"><ele>201.0</ele><time>2026-09-03T08:01:00Z</time></trkpt>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="-33.1000000" lon="-23.1000000"><ele>210.0</ele><time>2026-09-03T09:00:00Z</time></trkpt>
+      <trkpt lat="-33.1010000" lon="-23.1010000"><ele>211.0</ele><time>2026-09-03T09:01:00Z</time></trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Gate1 R3 Track Heart Cadence</name>
+    <trkseg>
+      <trkpt lat="-34.0000000" lon="-24.0000000"><ele>300.0</ele><time>2026-09-04T08:00:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>120</gpxtpx:hr><gpxtpx:cad>80</gpxtpx:cad><gpxtpx:atemp>15.5</gpxtpx:atemp></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="-34.0010000" lon="-24.0010000"><ele>301.0</ele><time>2026-09-04T08:01:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>125</gpxtpx:hr><gpxtpx:cad>82</gpxtpx:cad><gpxtpx:atemp>15.0</gpxtpx:atemp></gpxtpx:TrackPointExtension></extensions></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

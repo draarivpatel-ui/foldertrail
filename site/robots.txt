@@ -1,0 +1,6 @@
+# Foldertrail. Every page may be indexed. Before launch, replace https://foldertrail.example with the site's real
+# address here and in sitemap.xml. test/site.test.js checks that both use the same address.
+User-agent: *
+Allow: /
+
+Sitemap: https://foldertrail.example/sitemap.xml
