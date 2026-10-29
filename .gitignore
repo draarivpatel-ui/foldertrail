@@ -3,4 +3,3 @@ node_modules/
 *.local.md
 scratch/
 dist/
-tools/gate1/check.html
