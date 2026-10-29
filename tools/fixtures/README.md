@@ -31,7 +31,8 @@ import { buildBackup } from '../tools/fixtures/backup.js';
 const { built, expected, scenario, exercises } = buildScenario('nested-tree');
 built.files;      // Map: "AllData.gdb" | "FolderData.gfi" | "TrackSegments/<uuid>" → Uint8Array (relative to Database/<version>)
 built.databaseVersion; // "4.8"
-await buildBackup(built, { compression: 'store' | 'auto', zip64: 'auto' | 'always', directories: true, name: 'BaseCamp_x' });
+await buildBackup(built, { compression: 'store', zip64: 'auto', directories: true, name: 'BaseCamp_x' });
+// compression: 'store' or 'auto'; zip64: 'auto' or 'always'
 ```
 
 ### Expected result (`expected`)
