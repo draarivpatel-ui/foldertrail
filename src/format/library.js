@@ -810,7 +810,9 @@ function buildItems(parsed, library, counts) {
         const matches = waypointsByKey.get(linkKey('waypoint', p.cls, p.key));
         const unique = matches && matches.length === 1 ? matches[0] : null;
         if (p.lat !== null && p.lon !== null) {
-          points.push({ lat: p.lat, lon: p.lon, ele: null, name: p.name, symbol: unique ? unique.symbol : '' });
+          // The link point carries no elevation; take the waypoint's only when it sits at the same position.
+          const ele = unique && unique.lat === p.lat && unique.lon === p.lon ? unique.ele : null;
+          points.push({ lat: p.lat, lon: p.lon, ele, name: p.name, symbol: unique ? unique.symbol : '' });
         } else if (unique) {
           points.push({ lat: unique.lat, lon: unique.lon, ele: unique.ele, name: p.name, symbol: unique.symbol });
         } else {

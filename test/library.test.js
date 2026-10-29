@@ -334,6 +334,17 @@ test('versions: exported 1.7-1.9 and old 1.15-1.38 are refused; others outside 1
   }
 });
 
+test('a route point with link coordinates keeps its waypoint\'s elevation only at the same position', async () => {
+  const gdb = container('MsRc', 188, [
+    ['W', waypoint('Spring', { alt: 1500, time: 1700000000 })],
+    ['R', route('Up', [{ name: 'Spring', at: [46, 7] }, { name: 'Spring', at: [46.2, 7.2] }])],
+    END,
+  ]);
+  const { library } = await readLibrary({ allData: sourceFile('AllData.gdb', gdb), folderData: null, trackSegments: new Map() });
+  const up = /** @type {import('../src/model.js').Route} */ (library.items.find((i) => i.kind === 'route'));
+  assert.deepEqual(up.points.map((p) => p.ele), [1500, null]);
+});
+
 test('reading: folder files go in 16 MiB windows; backup entries in one call; handles are released', async () => {
   const { gdb } = sampleLibrary();
   const big = new Uint8Array(gdb.length - 15 + 17 * 2 ** 20); // the sample without its 'X' record, then zeros
