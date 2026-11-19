@@ -18,8 +18,6 @@
 import { readHeader } from './container.js';
 import { Counts, ALTITUDE_ABSENT_AT } from './gdb.js';
 
-/** Point sizes tried, in this order: 17 presence slots (FORMAT.md §15.11) and the fixed 11 bytes (§9.2). */
-export const POINT_SIZES = Object.freeze([17, 11]);
 const SMALLEST_POINT = 11;
 const SLOTS = 17;
 /** Value width of each slot (index 0 = slot 1) when present; 0 = unknown width (a present value fails the layout). */

@@ -89,13 +89,6 @@ export const LIMITS = Object.freeze({
 // ---------------------------------------------------------------------------------------------
 // Words
 
-export const STEP_LABELS = Object.freeze([
-  { key: 'open', label: 'Choose library' },
-  { key: 'read', label: 'Read' },
-  { key: 'preview', label: 'Preview' },
-  { key: 'download', label: 'Download' },
-]);
-
 /** What the page says while each phase runs. */
 export const PHASE_TEXT = Object.freeze({
   listing: 'Finding the library…',
