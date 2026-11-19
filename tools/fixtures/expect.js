@@ -254,12 +254,6 @@ export function decodeText(bytes) {
   }
 }
 
-/** @param {import('./writer.js').Text} t */
-function textOf(t) {
-  if (typeof t === 'string') return t;
-  return decodeText(encodeText(t)).text;
-}
-
 /** @param {Uint8Array} b */
 const hex = (b) => Array.from(b, (x) => x.toString(16).padStart(2, '0')).join('');
 

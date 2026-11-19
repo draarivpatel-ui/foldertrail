@@ -48,14 +48,6 @@ function rel(file) {
 }
 
 /**
- * @param {string} name
- * @returns {boolean}
- */
-function isIdentifier(name) {
-  return /^[A-Za-z_$][\w$]*$/.test(name);
-}
-
-/**
  * Parses and rewrites one module.
  * @param {string} file
  * @param {string} source
